@@ -1,10 +1,43 @@
 ---
-layout: main.liquid
+layout: main
 title: Title of site
 ---
 
+<section class="container">
+    <ul class="w-full grid grid-cols-2 xl:grid-cols-3 gap-1">
+        
+        {% for work in collections.recent %}
+        <li class="relative group overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+          <div class="absolute w-full h-full hidden group-hover:flex items-center z-30">
+            <div class="mx-auto text-center text-white">
+              <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+              <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+              {% include 'partial/btn',
+                url: work.url,
+                text: 'View project',
+                class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primaryLight'
+                %}
+            </div>
+          </div>
+          {% include 'partial/img',
+            path: work.data.imghero,
+            2xl: '&w=500&h=500&fit=crop',
+            xl: '&w=420&h=500&fit=crop',
+            lg: '&w=500&h=450&fit=crop',
+            md: '&w=400&h=400&fit=crop',
+            sm: '&w=320&h=400&fit=crop',
+            class: 'transition duration-500 ease-in-out group-hover:scale-105'
+          %}
+            </li>
+          {% endfor %}
+      </ul>
+</section>
+
+<section class="container">
   <h1 class="text-3xl text-red-200 font-bold underline">
     Hello world! this is your liffe
   </h1>
   <p class="underline">This should be underlined</p>
   <p class="font-bold text-primary-dark text-6xl">Hello there</p>
+</section>
