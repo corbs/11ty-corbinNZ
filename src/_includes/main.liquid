@@ -1,0 +1,114 @@
+---
+title: My Rad Blog
+---
+
+<!doctype html>
+<html class="no-js" xmlns="//www.w3docs.com/2014/xhtml" lang="en" xml:lang="en">
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5LND3BVWN9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5LND3BVWN9');
+</script>
+
+<!-- Meta Data -->
+  <title>Corbin Featherstone | Graphic designer & brand guardian</title>
+  <meta name="Description" content="Senior digital creative, with a long history delivering exceptional visuals that solve problems.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Links -->
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto+Slab:wght@400;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d81609fe66.js" crossorigin="anonymous"></script>  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- JS -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#fec82a">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#fec82a">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#fec82a">
+
+</head>
+<body class="flex flex-col min-h-screen">
+
+  {{ content }}
+
+  {% include "partial/socmed.liquid"
+    class="-mx-2"
+    linkClass="hover:border-b-2 border-current"
+     %}
+
+</body>
+
+<footer class="bg-gray-800 text-gray-500 z-10">
+  <div class="container py-12">
+    <div class="flex flex-col lg:flex-row justify-between">
+
+    <div class="w-full lg:pr-16 xl:pr-32 text-sm py-2">
+      <h2 class="p-0 m-0 text-gray-400">Corbin Featherstone</h2>
+      <p class="pt-2">Agworld is a collaborative farm data ecosystem for growers, agronomists, and others involved in the farming process.</p>
+    </div>
+
+    <div class="flex lg:justify-end w-full xl:w-3/5 py-2">
+    <div class="pr-10 lg:pr-16 xl:pr-20">
+      <div class="text-sm ">
+        <h6 class="text-gray-400 pb-2 ">Company</h6>
+        <ul>
+          <li><a href="/about" class="hover:underline no-underline text-grey">About</a></li>
+          <li><a href="/careers" class="hover:underline no-underline text-grey">Careers</a></li>
+          <li><a href="/privacy" class="hover:underline no-underline text-grey">Privacy</a></li>
+          <li><a href="https://agworld-marketing.s3.amazonaws.com/MSA-2020-02-22.pdf" target="_blank" class="hover:underline no-underline text-grey">Terms <i class="fas fa-external-link fa-xs"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pr-10 lg:pr-16 xl:pr-20">
+      <div class="text-sm">
+        <h6 class="text-gray-400 pb-2 ">Resources</h6>
+        <ul>
+          <li><a href="/blog" class="hover:underline no-underline text-grey">Blog</a></li>
+          <li><a href="/customers" class="hover:underline no-underline text-grey">Customers</a></li>
+          <li><a href="/ecosystem/farming" class="hover:underline no-underline text-grey">Partners</a></li>
+          <li><a href="/products" class="hover:underline no-underline text-grey">Products</a></li>
+          <li><a href="/solutions" class="hover:underline no-underline text-grey">Solutions</a></li>
+          <li><a href="/whats-new" class="hover:underline no-underline text-grey">What's new</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="">
+      <div class="text-sm">
+        <h6 class="text-gray-400 pb-2 ">Support</h6>
+        <ul>
+          <li><a href="/contact" class="hover:underline no-underline text-grey"><i class="fas fa-comment fa-fw mr-2 text-brand"></i> Contact us</a></li>
+          <li><a href="https://help.agworld.com/en/" class="hover:underline no-underline text-grey"><i class="fas fa-life-ring fa-fw mr-2 text-brand"></i> Help centre <i class="fas fa-external-link fa-xs"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="bg-gray-900">
+  <div class="container flex flex-wrap justify-between items-center py-5 text-gray-300">
+    <p class="text-sm py-1">&copy; Corbin Featherstone</p>
+  </div>
+</div>
+
+</footer>
+
+</html>

@@ -3,6 +3,55 @@
 @tailwind utilities;
 
 
-h1 {
-    @apply font-bold text-red-700 text-3xl;
-}
+html {
+    @apply bg-gray-50;
+  }
+  
+  body {
+    font-family: 'Roboto Slab', serif;
+    @apply text-gray-900 leading-relaxed;
+  }
+  
+  p a {
+    @apply font-bold;
+    }
+  
+  p a:hover {
+    text-decoration: underline;
+      text-underline-offset: 8px;
+  }
+  
+  h1, .h1 {
+    @apply text-6xl leading-none font-bold mb-4 mt-6;
+    }
+  
+  h2, .h2 {
+    @apply text-4xl leading-tight font-bold mb-3 mt-5;
+    }
+  
+  h4, .h4 {
+    font-family: 'Montserrat', sans-serif;
+    @apply text-lg font-semibold;
+    }
+  
+  h5, .h5 {
+    font-family: 'Montserrat', sans-serif;
+    @apply text-xs tracking-widest uppercase font-medium;
+    }
+  
+  h6, .h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply text-sm font-semibold;
+    }
+  
+  .menu a:hover {
+    @apply border-gray-900  ;
+    }
+  
+  .breadcrumbs li::after {
+    content: "/";
+  }
+  
+  .breadcrumbs li:last-child::after {
+    content: none;
+  }

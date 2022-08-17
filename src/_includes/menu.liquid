@@ -1,0 +1,74 @@
+
+  <header class="z-40 flex justify-between items-center bg-primary">
+    
+        <!-- Logo -->
+        <a class="cursor-pointer block lg:ml-12 ml-5 px-4 lg:px-5 pt-8 md:pt-10 lg:pt-12 pb-4 lg:pb-5 bg-gray-900" href="/">
+          <img
+          class="w-6 md:w-9"
+          src="/assets/alignleft_logo.svg"
+          alt="Align Left, graphic design logo"
+          aria-label="Portfolio website logo"
+          >
+        </a>
+
+        <!-- Navigation -->
+        <nav
+        class="pr-6"
+        x-data="{ isNavOpen: false }"
+        >
+  
+        <!-- Menu button -->
+        <button
+          x-on:click="isNavOpen = !isNavOpen"
+          type="button"
+          aria-label="Navigation menu popup"
+          class="flex md:hidden p-2 focus:outline-none"
+        >
+          <svg
+            class="h-6 w-6 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              x-show="isNavOpen"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+            />
+            <path
+              x-show="!isNavOpen"
+              fill-rule="evenodd"
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+            />
+          </svg>
+        </button>
+  
+        <!-- Menu  -->
+        <div
+          class="md:flex"
+          x-bind:class="!isNavOpen ? 'hidden' : 'absolute right-0 top-0 left-0 shadow-xl bg-primary mt-20 py-12'"
+        >
+          <ul
+          class="md:flex"
+          >
+          {% for item in site.data.menu.list %}
+          <li
+          class="m-4"
+          x-bind:class="!isNavOpen ? '' : 'text-3xl text-center py-3 font-bold'"
+          >
+          <a 
+          class="p-2 tracking-wider border-current hover:border-b-4" 
+          href="{{ item.url }}"
+          @click="isNavOpen = false"
+          >
+          {{ item.title }}
+          </a>
+          </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </nav>
+</header>
+
+
+

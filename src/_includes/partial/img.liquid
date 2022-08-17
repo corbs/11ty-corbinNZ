@@ -1,0 +1,26 @@
+<picture>
+  <source
+  srcset="https://agw.imgix.net/ad/cnz/{{ include.path }}?auto=format{{ include.2xl }}"
+  media="(min-width: 1536px)"
+  >
+  <source
+    srcset="https://agw.imgix.net/ad/cnz/{{ include.path }}?auto=format{{ include.xl }}"
+    media="(min-width: 1280px)"
+  >
+  <source
+    srcset="https://agw.imgix.net/ad/cnz/{{ include.path }}?auto=format{{ include.lg }}"
+    media="(min-width: 1024px)"
+  >
+  <source
+    srcset="https://agw.imgix.net/ad/cnz/{{ include.path }}?auto=format{{ include.md }}"
+    media="(min-width: 769px)"
+  >
+  <source
+    srcset="https://agw.imgix.net/ad/cnz/{{ include.path }}?auto=format{{ include.sm }}"
+    media="(max-width: 769px)"
+  >
+  <img src="https://agw.imgix.net/ad/cnz/{{ include.path }}?auto=format{{ include.xl }}"
+    alt="{% if include.imgalt %}{{ include.imgalt }}{% else %}Graphic Design Portfolio Work by Corbin Featherstone{% endif %}"
+    class="lazyload {{ include.class }}"
+  >
+</picture>
