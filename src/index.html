@@ -19,23 +19,23 @@ title: Title of site
           {% include 'partial/btn',
           url: 'assets/file/corbin_featherstone.pdf',
           text: 'My portfolio',
-          class: 'my-2 border-2 border-gray-900 hover:bg-primaryLight'
+          class: 'my-2 border-2 border-gray-900 hover:bg-primary-light'
           icopost: 'arrow-right'
           %}
   
         </div>
       </div>
-      <div class="hidden lg:block">
-        {% include 'partial/img',
+      <div class="hidden lg:flex">
+      {% include 'partial/img',
         path: 'home.jpg',
-        2xl='&h=800',
-        xl='&h=700',
-        lg='&h=550',
-        md='&w=20',
-        sm='&w=20',
-        alt='Bad Juju, beer brand by Corbin Featherstone',
-        class=''
-        %}
+        2xl: '&h=800',
+        xl: '&h=700',
+        lg: '&h=550',
+        md: '&w=20',
+        sm: '&w=20',
+        alt: 'Bad Juju, beer brand by Corbin Featherstone',
+        class: ''
+      %}
       </div>
     </div>
   </section>
@@ -46,16 +46,16 @@ title: Title of site
       class: '-mx-2',
       linkClass: 'hover:border-b-2 border-current'
       %}
-  </section>
+</section>
 
 <!-- Videos -->
 <section class=" container pt-24 pb-10">
-    <div class="w-full text-center">
+    <div class="w-full text-center pb-20">
       <h5>Corbin Featherstone</h5>
       <p class="font-bold text-4xl lg:text-5xl py-4">
         Communicate. Information. Visually.
       </p>
-      <p class="text-xl text-gray-500 pb-8">
+      <p class="text-xl text-gray-500">
         I'm a senior graphic designer with a long history creating top quality work that solves problems. Here's a few examples of <span class="border-b-2 border-current">how</span> I work.
       </p>
     </div>
@@ -97,12 +97,24 @@ title: Title of site
             </div>
           </div>
         </div>
-  </section>
+</section>
 
 <!-- Recent -->
-<section class="container">
+<section class="container py-24">
+  <div class="w-full">
+    <h2>Recent work</h2>
+    <p class="text-lg text-gray-500 pb-8 lg:w-1/2">
+      The projects on this site represent a small section of my entire portfolio. Each project listed here has been entirely designed by myself, from concept to completion. Copyright belongs entirely to the company they were designed for. 
+    </p>
+    {% include 'partial/btn',
+      url: '/work',
+      text: 'All work',
+      class: 'my-3 border border-gray-200 bg-white hover:border-gray-500',
+      icopost: 'angle-right'
+      %}
+  </div>
     <ul class="w-full grid grid-cols-2 xl:grid-cols-3">
-        {% for work in collections.recent %}
+        {% for work in collections.recent  %}
         <li class="relative group overflow-hidden">
           <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
           <div class="absolute w-full h-full hidden group-hover:flex items-center z-30">
@@ -112,7 +124,7 @@ title: Title of site
               {% include 'partial/btn',
                 url: work.url,
                 text: 'View project',
-                class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primaryLight'
+                class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
                 %}
             </div>
           </div>
@@ -130,10 +142,536 @@ title: Title of site
       </ul>
 </section>
 
-<section class="container">
-  <h1 class="text-3xl text-red-200 font-bold underline">
-    Hello world! this is your liffe
-  </h1>
-  <p class="underline">This should be underlined</p>
-  <p class="font-bold text-primary-dark text-6xl">Hello there</p>
+<!-- About me -->
+<section class=" w-full bg-white border-y mt-40 mb-12">
+  <div class="container flex flex-wrap">
+    <span class="-mt-16 lg:w-1/4">
+      {% include 'partial/img', 
+        path: 'avatar5.jpg',
+        2xl: '&w=400',
+        xl: '&w=320',
+        lg: '&w=250',
+        md: '&w=150',
+        sm: '&w=80',
+        class: 'p-6 md:p-8 lg:p-12 bg-primary border-8 border-white rounded shadow-md'
+        %}
+    </span>
+    <div class="p-8 lg:p-12 w-full lg:w-3/4">
+      <h5>Solving problems visually</h5>
+      <h2>About me</h2>
+      <p class="text-gray-500">
+        I'm a process oriented graphic designer with decades of experience, working nearly every role in the industry. 
+      </p>
+      <ul class="py-5 text-sm">
+        <li class="pb-4 flex flex-row items-center">
+          <div class="hidden md:flex font-bold text-5xl text-gray-300 w-12">1</div>
+          <div>
+          <h6 class="text-base">Productive under pressure</h6>
+          <p class="text-gray-500">I've done my time in the trenches and know what it takes to push a project home with my sense of humour intact.</p>
+          </div>
+        </li>
+        <li class="pb-4 flex flex-row items-center">
+          <div class="hidden md:flex font-bold text-5xl text-gray-300 w-12">2</div>
+          <div>
+          <h6 class="text-base">Front-line big brand experience</h6>
+          <p class="text-gray-500">Juggling Familiar with the entire design process, from ideation to print.</p>
+          </div>
+        </li>
+        <li class="pb-4 flex flex-row items-center">
+          <div class="hidden md:flex font-bold text-5xl text-gray-300 w-12">3</div>
+          <div>
+          <h6 class="text-base">Diverse skillset</h6>
+          <p class="text-gray-500">I work well with other teams as I've almost certainly been in the role that I'm working with. Giving me insight into decisions that are easy to accomplish with an easy win, and the frustrations and blockers.</p>
+          </div>
+        </li>
+        <li class="pb-4 flex flex-row items-center">
+          <div class="hidden md:flex font-bold text-5xl text-gray-300 w-12">4</div>
+          <div>
+          <h6 class="text-base">Flexible and supportive</h6>
+          <p class="text-gray-500">I don't have an ego that needs stroking and focus on decisions that are sensible for the whole company, this usually means adapting to the needs of the team. Providing useful contributions, mentoring and support.</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
 </section>
+
+<!-- Featured -->
+<section class="container pt-20 pb-8 ">
+  <h2>Featured</h2>
+  <p class="text-lg text-gray-500 pb-8 lg:w-1/2">
+    All projects on this site have been entirely designed by myself, from concept to completion. Copyright belongs to the company they were designed for. 
+  </p>
+  {% include 'partial/btn',
+    url: '/work',
+    text: 'All work',
+    class: 'my-3 border border-gray-200 bg-white hover:border-gray-500',
+    icopost: 'angle-right'
+    %}
+</section>
+
+<!-- website section -->
+<section class="container flex flex-wrap justify-between items-center pb-20 ">
+  <div class="w-full lg:w-1/4">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Website front-end</h2>
+    <p class="text-lg">
+      <strong>Don't forget to add a bit about Tailwind being awesome for illustrations</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </p>
+    <p>Framework list</p>
+
+    {% include 'partial/btn',
+    url: '/assets/file/corbin_featherstone.pdf',
+    text: 'All Websites',
+    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    icopost: 'angle-right'
+    %}
+
+  </div>
+  <div class="w-full lg:w-2/3 my-3 group relative overflow-hidden rounded-lg">
+    {% for work in collections.featuredWebsite %}
+        <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+          <div class="absolute w-full h-full hidden group-hover:flex items-center">
+            <div class="mx-auto text-center text-white z-30">
+              <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+              <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+              {% include 'partial/btn',
+                url: work.url,
+                text: 'View project',
+                class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+                %}
+            </div>
+          </div>
+          {% include 'partial/img',
+            path: work.data.imghero,
+            2xl: '&w=1000&h=650&fit=crop',
+            xl: '&w=850&h=500&fit=crop',
+            lg: '&w=700&h=600&fit=crop',
+            md: '&w=750&h=400&fit=crop',
+            sm: '&w=600&h=350&fit=crop',
+            class: 'transition duration-500 ease-in-out group-hover:scale-105'
+          %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Brand section -->
+<section class="container flex flex-wrap flex-row-reverse justify-between items-center py-20 ">
+  <div class="w-full lg:w-5/12 mx-auto">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Branding</h2>
+    <p class="text-lg">
+      Stylised eye as seen reflected in a telescope. Image created using the planets of the solar system. Each planet is correctly proportional in size.
+    </p>
+
+      {% include 'partial/btn',
+        url: '/assets/file/corbin_featherstone.pdf',
+        text: 'All Branding',
+        class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+        icopost: 'angle-right'
+        %}
+  </div>
+  <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
+    {% for work in collections.featuredBranding %}
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute w-full h-full hidden group-hover:flex items-center">
+      <div class="mx-auto text-center text-white z-30">
+        <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+        <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+        {% include 'partial/btn',
+          url: work.url,
+          text: 'View project',
+          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          %}
+      </div>
+    </div>
+    {% include 'partial/img',
+      path: work.data.imghero,
+      2xl: '&w=1000&h=650&fit=crop',
+      xl: '&w=850&h=500&fit=crop',
+      lg: '&w=700&h=600&fit=crop',
+      md: '&w=750&h=400&fit=crop',
+      sm: '&w=600&h=350&fit=crop',
+      class: 'transition duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75'
+    %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Layout section -->
+<section class="container flex flex-wrap justify-between items-center py-20 ">
+  <div class="w-full lg:w-5/12 mx-auto">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Print & digital layout</h2>
+    <p class="text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+    </p>
+
+      {% include 'partial/btn',
+        url: '/work',
+        text: 'All Layout',
+        class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+        icopost: 'angle-right'
+        %}
+  </div>
+  <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
+    {% for work in collections.featuredLayout %}
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute w-full h-full hidden group-hover:flex items-center">
+      <div class="mx-auto text-center text-white z-30">
+        <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+        <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+        {% include 'partial/btn',
+          url: work.url,
+          text: 'View project',
+          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          %}
+      </div>
+    </div>
+    {% include 'partial/img',
+      path: work.data.imghero,
+      2xl: '&w=1000&h=650&fit=crop',
+      xl: '&w=850&h=500&fit=crop',
+      lg: '&w=700&h=600&fit=crop',
+      md: '&w=750&h=400&fit=crop',
+      sm: '&w=600&h=350&fit=crop',
+      class: 'transition duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75'
+    %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Advertising section -->
+<section class="container flex flex-row-reverse flex-wrap justify-between items-center py-20 ">
+  <div class="w-full lg:w-1/4 mx-auto">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Advertising</h2>
+    <p class="text-lg">
+      Tractor crops / Digital cloud watering plant
+    </p>
+
+      {% include 'partial/btn',
+        url: '/work',
+        text: 'All Advertising',
+        class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+        icopost: 'angle-right'
+        %}
+  </div>
+  <div class="w-full lg:w-7/12 my-3 group relative overflow-hidden rounded-lg">
+    {% for work in collections.featuredAdvertising %}
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute w-full h-full hidden group-hover:flex items-center">
+      <div class="mx-auto text-center text-white z-30">
+        <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+        <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+        {% include 'partial/btn',
+          url: work.url,
+          text: 'View project',
+          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          %}
+      </div>
+    </div>
+    {% include 'partial/img',
+      path: work.data.imghero,
+      2xl: '&w=1000&h=650&fit=crop',
+      xl: '&w=850&h=500&fit=crop',
+      lg: '&w=700&h=600&fit=crop',
+      md: '&w=750&h=400&fit=crop',
+      sm: '&w=600&h=350&fit=crop',
+      class: 'transition duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75'
+    %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="container py-20 ">
+  {% include 'partial/quote-lg',
+  quote: "...the truth is, it's not the idea, it's never the idea, it's always what you do with it.",
+  attribute: 'Neil Gaiman',
+  class: ''
+  %}
+</section>
+
+<!-- Skillset -->
+  <section class="container flex flex-wrap">
+    <div class="p-12 w-full lg:w-3/4">
+      <h5>Software</h5>
+      <h2>Add tabs with software icons with hover or click to show projects that have been made using the software</h2>
+      <p class="text-gray-500">
+        Here's some of the tools I'm most familiar with.
+      </p>
+    </div>
+  </section>
+
+<!-- Video editing and Motion graphics -->
+<section class="flex flex-wrap my-24">
+  <div class="flex-1 flex flex-col content-end bg-gray-700 h-96 p-20 text-gray-400">
+    <h2>Video editing</h2>
+    <p>Post my first case study video mashup</p>
+  </div>
+  <div class="flex-1 bg-gray-800 h-96 p-20 text-gray-200">
+    <h2 class="">Motion graphics</h2>
+    <p>Shed</p>
+  </div>
+</section>
+
+<!-- Image processing section -->
+<section class="container py-24 ">
+  <div class="flex flex-wrap items-stretch rounded">
+    <div class="bg-white border lg:w-1/4 p-12 lg:-mr-5 lg:-mt-6 lg:mb-6 z-10">
+      <h2>Image processing</h2>
+      <p class="pb-20">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </p>
+    </div>
+    <div class="bg-gray-200 flex-1 flex items-center">
+      <h2 class="mx-auto">Comparison slider</h2>
+    </div>
+  </div>
+</section>
+
+<!-- Packaging -->
+<section class="container flex flex-wrap flex-row-reverse justify-between items-center py-20 ">
+  <div class="w-full lg:w-5/12 mx-auto">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Packaging</h2>
+    <p class="text-lg">
+      Stylised eye as seen reflected in a telescope. Image created using the planets of the solar system. Each planet is correctly proportional in size.
+    </p>
+
+    {% include 'partial/btn',
+    url: '/work',
+    text: 'All Packaging',
+    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    icopost: 'angle-right'
+    %}
+  </div>
+  <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
+
+    {% for work in collections.featuredPackaging %}
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute w-full h-full hidden group-hover:flex items-center">
+      <div class="mx-auto text-center text-white z-30">
+        <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+        <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+        {% include 'partial/btn',
+          url: work.url,
+          text: 'View project',
+          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          %}
+      </div>
+    </div>
+    {% include 'partial/img',
+      path: work.data.imghero,
+      2xl: '&w=1000&h=650&fit=crop',
+      xl: '&w=850&h=500&fit=crop',
+      lg: '&w=700&h=600&fit=crop',
+      md: '&w=750&h=400&fit=crop',
+      sm: '&w=600&h=350&fit=crop',
+      class: 'transition duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75'
+    %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Illustration -->
+<section class="container flex flex-wrap justify-between items-center py-20 ">
+  <div class="w-full lg:w-5/12 mx-auto">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Illustration</h2>
+    <p class="text-lg">
+      Stylised eye as seen reflected in a telescope. Image created using the planets of the solar system. Each planet is correctly proportional in size.
+    </p>
+
+    {% include 'partial/btn',
+    url: '/work',
+    text: 'All Illustration',
+    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    icopost: 'angle-right'
+    %}
+  </div>
+  <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
+
+    {% for work in collections.featuredIllustration %}
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute w-full h-full hidden group-hover:flex items-center">
+      <div class="mx-auto text-center text-white z-30">
+        <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+        <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+        {% include 'partial/btn',
+          url: work.url,
+          text: 'View project',
+          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          %}
+      </div>
+    </div>
+    {% include 'partial/img',
+      path: work.data.imghero,
+      2xl: '&w=1000&h=650&fit=crop',
+      xl: '&w=850&h=500&fit=crop',
+      lg: '&w=700&h=600&fit=crop',
+      md: '&w=750&h=400&fit=crop',
+      sm: '&w=600&h=350&fit=crop',
+      class: 'transition duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75'
+    %}
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- Events -->
+<section class="container flex flex-wrap flex-row-reverse justify-between items-center py-20 ">
+  <div class="w-full lg:w-5/12 mx-auto">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Events</h2>
+    <p class="text-lg">
+      Stylised eye as seen reflected in a telescope. Image created using the planets of the solar system. Each planet is correctly proportional in size.
+    </p>
+
+    {% include 'partial/btn',
+    url: '/work',
+    text: 'All Events',
+    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    icopost: 'angle-right'
+    %}
+  </div>
+  <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
+
+    {% for work in collections.featuredEvents %}
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute w-full h-full hidden group-hover:flex items-center">
+      <div class="mx-auto text-center text-white z-30">
+        <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+        <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+        {% include 'partial/btn',
+          url: work.url,
+          text: 'View project',
+          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          %}
+      </div>
+    </div>
+    {% include 'partial/img',
+      path: work.data.imghero,
+      2xl: '&w=1000&h=650&fit=crop',
+      xl: '&w=850&h=500&fit=crop',
+      lg: '&w=700&h=600&fit=crop',
+      md: '&w=750&h=400&fit=crop',
+      sm: '&w=600&h=350&fit=crop',
+      class: 'transition duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75'
+    %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- What does a designer do for my company? -->
+<section class="container py-24 ">
+  <h2>What does a designer do for my company?</h2>
+  <p>Communicates. Information. Visually.</p>
+  <p>You have at most three seconds to make an impression. If the purpose of your design isn't immediately apparent you've lost the chance to connect with your target audience.
+    The hard truth is that almost everyone who looks at your company is going to glance at it. You need to make the absolute most of those few seconds.</p>
+  <p>It's nearly impossible to meet this need with text alone</p>
+  <p>Properly designed visuals impart tons of information at a glance. The moment you look at something you've already retained an impression about 
+    <ul>
+      <li>What is the purpose, or message being relayed</li>
+      <li>How does this relate to what I'm currently doing?</li>
+      <li>Do I recognize this as being part of something else?</li>
+      <li>Who is communicating this message</li>
+    </ul>
+    Not to mention next level intangibles like: 'How much effort was put into this'
+</p>
+  </section>
+
+<!-- Image compositing section -->
+<section class="container py-24 ">
+  <div class="flex flex-wrap items-stretch rounded">
+    <div class="bg-white border lg:w-1/4 p-12 lg:-mr-5 lg:-mt-6 lg:mb-6 z-10">
+      <h2>Image compositing</h2>
+      <p class="pb-20">
+        Day / night, tractor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    <div class="bg-gray-200 flex-1 flex items-center">
+      <h2 class="mx-auto">Comparison slider</h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- Traditional -->
+<section class="container py-20">
+  <div class="w-full">
+    {% include 'partial/icon-box',
+    icon: 'user-friends',
+    class: 'block'
+    %}
+    <h2>Traditional</h2>
+    <p class="text-lg md:w-1/2">
+      Trade shows and displays. dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+    </p>
+  </div>
+  <ul class="w-full grid grid-cols-3 gap-8 my-8">
+      {% for work in collections.artwork  %}
+      <li class="relative group overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+        <div class="absolute w-full h-full hidden group-hover:flex items-center z-30">
+          <div class="mx-auto text-center text-white">
+            <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+            <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
+            {% include 'partial/btn',
+              url: work.url,
+              text: 'View project',
+              class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+              %}
+          </div>
+        </div>
+        {% include 'partial/img',
+          path: work.data.imghero,
+          2xl: '&w=500&h=500&fit=crop',
+          xl: '&w=420&h=500&fit=crop',
+          lg: '&w=500&h=450&fit=crop',
+          md: '&w=400&h=400&fit=crop',
+          sm: '&w=320&h=400&fit=crop',
+          class: 'transition duration-500 ease-in-out group-hover:scale-105'
+        %}
+          </li>
+        {% endfor %}
+  </ul>
+</section>
+
+<!-- What am I looking for? -->
+<section class="container my-24 ">
+  <h2>What am I looking for?</h2>
+  <p>In a nutshell I'm looking for opportunities where I can add the most value.</p>
+  <p>Continuing to develop my skills across the board, this means working with people who are better than me.</p>
+  <p>Somewhere that recognizes the advantages of an agile methodology: Having solid task tracking, with visibility and accountability. Or at the least are willing to put in the work implementing such a system.</p>
+</section>
+
+<script>{% include 'schema_personal.json' %}</script>
