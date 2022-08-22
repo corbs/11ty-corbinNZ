@@ -3,11 +3,15 @@ title: My Rad Blog
 ---
 
 {% include 'header' %}
+{% include 'navigation' %}
 
-<body class="flex flex-col min-h-screen">
+
+<body class="flex flex-col">
+  <main class="flex-1">
 
   {{ content }}
 
+  </main>
 </body>
 
 {% include 'footer' %}
