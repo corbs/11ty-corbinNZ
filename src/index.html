@@ -19,7 +19,7 @@ title: Title of site
           {% include 'partial/btn',
           url: 'assets/file/corbin_featherstone.pdf',
           text: 'My portfolio',
-          class: 'my-2 border-2 border-gray-900 hover:bg-primary-light'
+          class: 'my-2 border-2 border-gray-900 hover:bg-primary-light',
           icopost: 'arrow-right'
           %}
   
@@ -130,12 +130,12 @@ title: Title of site
           </div>
           {% include 'partial/img',
             path: work.data.imghero,
-            2xl: '&w=500&h=500&fit=crop',
-            xl: '&w=460&h=450&fit=crop',
-            lg: '&w=540&h=450&fit=crop',
-            md: '&w=480&h=400&fit=crop',
-            sm: '&w=320&h=400&fit=crop',
-            class: 'transition duration-500 ease-in-out group-hover:scale-105'
+            2xl: '&w=510&h=510&fit=crop',
+            xl: '&w=420&h=400&fit=crop',
+            lg: '&w=500&h=420&fit=crop',
+            md: '&w=380&h=300&fit=crop',
+            sm: '&w=310&h=280&fit=crop',
+            class: 'flex-1 transition duration-500 ease-in-out group-hover:scale-105'
           %}
             </li>
           {% endfor %}
@@ -236,6 +236,7 @@ title: Title of site
                 {% include 'partial/btn',
                 url: work.url,
                 text: 'Website',
+                icopost: 'arrow-up-right',
                 class: 'm-2 py-2 cursor-pointer text-gray-200 border border-black bg-gray-900 hover:bg-gray-800'
                 %}
             </div>
@@ -247,7 +248,7 @@ title: Title of site
             lg: '&w=700&h=600&fit=crop',
             md: '&w=750&h=400&fit=crop',
             sm: '&w=600&h=350&fit=crop',
-            class: 'transition duration-500 ease-in-out group-hover:scale-105'
+            class: 'flex-1 transition duration-500 ease-in-out group-hover:scale-105'
           %}
     {% endfor %}
   </div>
