@@ -206,7 +206,8 @@ title: Title of site
     %}
 
   </div>
-  <div class="w-full lg:w-2/3 my-3 group relative overflow-hidden rounded-lg">
+  <div class="w-full lg:w-2/3 my-3 relative overflow-hidden rounded-lg">
+    <!-- group -->
     {% for work in collections.featuredWebsite %}
         <!-- 
         <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
@@ -235,8 +236,9 @@ title: Title of site
             lg: '&w=700&h=600&fit=crop',
             md: '&w=750&h=400&fit=crop',
             sm: '&w=600&h=350&fit=crop',
-            class: 'flex-1 transition duration-500 ease-in-out group-hover:scale-105'
+            class: 'bg-primary'
           %}
+          <!-- class: 'flex-1 transition duration-500 ease-in-out group-hover:scale-105' -->
     {% endfor %}
   </div>
 </section>
