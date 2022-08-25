@@ -25,7 +25,7 @@ title: My Rad Blog
   <div class="container py-20">
     
     <p class="h5">{{ tags }}</p>
-    <h1 class="pb-16 text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-primary-dark">{{ description }}</h1>
+    <h1 class="pb-16 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-primary-dark">{{ description }}</h1>
 
     <div class="flex">
   <div class="border rounded p-8">
@@ -47,17 +47,19 @@ title: My Rad Blog
       {{ content }}
     </div>
     <div class="w-2/6 bg-white border rounded">
-      {% for work in collections.{{ categories }}  %}
+      {% for work in collections.recent | limit(2) %} 
+      <a href={{ work.url}}>
         {% include 'partial/img',
-          path: imghero,
-          2xl: '&w=510&h=510&fit=crop',
-          xl: '&w=420&h=400&fit=crop',
-          lg: '&w=500&h=420&fit=crop',
-          md: '&w=400&h=300&fit=crop',
-          sm: '&w=380&h=280&fit=crop',
-          class: 'flex-1'
+        path: work.data.imghero,
+        2xl: '&w=510&h=510&fit=crop',
+        xl: '&w=420&h=400&fit=crop',
+        lg: '&w=500&h=420&fit=crop',
+        md: '&w=400&h=300&fit=crop',
+        sm: '&w=380&h=280&fit=crop',
+        class: 'transition duration-500 ease-in-out group-hover:scale-105'
         %}
-        {% endfor %}
+      </a>
+      {% endfor %}
     </div>
   </main>
 

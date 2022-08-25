@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+::selection {
+  @apply bg-primary-light text-gray-900;
+}
 
   body {
     font-family: 'Roboto Slab', serif;
