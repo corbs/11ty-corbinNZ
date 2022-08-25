@@ -1,23 +1,28 @@
 <picture>
   <source
-  srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ 2xl }}"
+  srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ 2xl }} 1x,
+                https://agw.imgix.net/ad/cnz/{{ path }}?auto=format&dpr=2{{ 2xl }} 2x"
   media="(min-width: 1536px)"
   >
   <source
-    srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ xl }}"
+  srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ xl }} 1x,
+            https://agw.imgix.net/ad/cnz/{{ path }}?auto=format&dpr=2{{ xl }} 2x"
     media="(min-width: 1280px)"
   >
   <source
-    srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ lg }}"
-    media="(min-width: 1024px)"
+  srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ lg }} 1x,
+            https://agw.imgix.net/ad/cnz/{{ path }}?auto=format&dpr=2{{ lg }} 2x"
+  media="(min-width: 1024px)"
   >
   <source
-    srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ md }}"
-    media="(min-width: 769px)"
+  srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ md }} 1x,
+            https://agw.imgix.net/ad/cnz/{{ path }}?auto=format&dpr=2{{ md }} 2x"
+  media="(min-width: 769px)"
   >
   <source
-    srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ sm }}"
-    media="(max-width: 769px)"
+  srcset="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ sm }} 1x,
+              https://agw.imgix.net/ad/cnz/{{ path }}?auto=format&dpr=2{{ sm }} 2x"
+  media="(max-width: 769px)"
   >
   <img src="https://agw.imgix.net/ad/cnz/{{ path }}?auto=format{{ xl }}"
     alt="{% if imgalt %}{{ imgalt }}{% else %}Graphic Design Portfolio Work by Corbin Featherstone{% endif %}"
