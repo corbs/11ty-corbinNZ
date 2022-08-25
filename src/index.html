@@ -206,10 +206,8 @@ title: Title of site
     %}
 
   </div>
-  <div class="w-full lg:w-2/3 my-3 relative ">
-    <!-- group overflow-hidden rounded-lg -->
+  <div class="w-full lg:w-2/3 my-3 relative group overflow-hidden rounded-lg">
     {% for work in collections.featuredWebsite %}
-        <!-- 
         <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
           <div class="absolute w-full h-full hidden group-hover:flex items-center">
             <div class="mx-auto text-center text-white z-30">
@@ -228,17 +226,15 @@ title: Title of site
                 %}
             </div>
           </div>
-          -->
           {% include 'partial/img',
             path: work.data.imghero,
             2xl: '&w=1000&h=650&fit=crop',
             xl: '&w=850&h=500&fit=crop',
             lg: '&w=700&h=600&fit=crop',
-            md: '&w=1200&h=400&fit=crop',
-            sm: '&w=600&h=350&fit=crop',
-            class: 'bg-primary'
+            md: '&w=980&h=500&fit=crop',
+            sm: '&w=800&h=450&fit=crop',
+            class: 'transition duration-500 ease-in-out group-hover:scale-105'
           %}
-          <!-- class: 'flex-1 transition duration-500 ease-in-out group-hover:scale-105' -->
     {% endfor %}
   </div>
 </section>
