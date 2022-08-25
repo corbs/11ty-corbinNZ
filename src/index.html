@@ -243,6 +243,18 @@ title: Title of site
   </div>
 </section>
 
+<section class="container">
+  {% include 'partial/img',
+  path: 'home.jpg',
+  2xl: '&w=1000&h=650&fit=crop',
+  xl: '&w=850&h=500&fit=crop',
+  lg: '&w=700&h=600&fit=crop',
+  md: '&w=1200&h=400&fit=crop',
+  sm: '&w=600&h=350&fit=crop',
+  class: 'bg-primary'
+%}
+</section>
+
 <!-- Brand section -->
 <section class="container flex flex-wrap flex-row-reverse justify-between items-center py-20 ">
   <div class="w-full lg:w-5/12 mx-auto">
