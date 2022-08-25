@@ -1,5 +1,10 @@
 module.exports = function(eleventyConfig) {
 
+  // Limit filter - usage: {{ for item in collections.all | limit(3) }}
+    eleventyConfig.addFilter("limit", function (arr, limit) {
+      return arr.slice(0, limit);
+    });
+
     // Create collections group featuredWebsite 
     eleventyConfig.addCollection("featuredWebsite", function (collectionApi) {
         return collectionApi.getFilteredByTags("featured", "website");

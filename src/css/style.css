@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 
-html {
-    @apply bg-gray-50;
-  }
-  
+
   body {
     font-family: 'Roboto Slab', serif;
     @apply text-gray-900 leading-relaxed;
