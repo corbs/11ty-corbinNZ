@@ -14,13 +14,13 @@ title: Title of site
           {% include 'partial/btn',
           url: '/contact',
           text: 'Get in touch',
-          class: 'my-2 mr-4 border-2 border-gray-900 bg-gray-900 text-primary hover:text-primary-light hover:shadow'
+          class: 'my-2 mr-4 border-2 border-gray-900 bg-gray-900 text-primary hover:text-primary-light hover:shadow',
           %}
           {% include 'partial/btn',
           url: 'assets/file/corbin_featherstone.pdf',
           text: 'My portfolio',
           class: 'my-2 border-2 border-gray-900 hover:bg-primary-light',
-          icopost: 'arrow-right'
+          icopost: 'arrow-up-right'
           %}
   
         </div>
@@ -117,7 +117,7 @@ title: Title of site
         {% for work in collections.recent  %}
         <li class="relative group overflow-hidden">
           <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
-          <div class="absolute w-full h-full hidden group-hover:flex items-center z-30">
+          <div class="absolute hidden group-hover:flex items-center z-30">
             <div class="mx-auto text-center text-white">
               <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
               <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
@@ -135,7 +135,7 @@ title: Title of site
             lg: '&w=500&h=420&fit=crop',
             md: '&w=380&h=300&fit=crop',
             sm: '&w=310&h=280&fit=crop',
-            class: 'flex-1 transition duration-500 ease-in-out group-hover:scale-105'
+            class: 'transition duration-500 ease-in-out group-hover:scale-105'
           %}
             </li>
           {% endfor %}
@@ -183,21 +183,6 @@ title: Title of site
     </div>
   </div>
 </section>
-
-<!-- Featured 
-<section class="container pt-20 pb-8 ">
-  <h2>Featured</h2>
-  <p class="text-lg text-gray-500 pb-8 lg:w-1/2">
-    All projects on this site have been entirely designed by myself, from concept to completion. Copyright belongs to the company they were designed for. 
-  </p>
-  {% include 'partial/btn',
-    url: '/work',
-    text: 'All work',
-    class: 'my-3 border border-gray-200 bg-white hover:border-gray-500',
-    icopost: 'angle-right'
-    %}
-</section>
--->
 
 <!-- website section -->
 <section class="container flex flex-wrap justify-between items-center pb-20 ">
