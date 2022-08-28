@@ -5,6 +5,16 @@
 ::selection {
   @apply bg-primary-light text-gray-900;
 }
+::-moz-selection {
+  @apply bg-primary-light text-gray-900;
+}
+
+.reversed::selection {
+  @apply  text-white;
+}
+.reversed::-moz-selection {
+  @apply  text-white;
+}
 
   body {
     font-family: 'Roboto Slab', serif;

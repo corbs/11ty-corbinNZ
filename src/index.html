@@ -4,11 +4,11 @@ title: Title of site
 ---
 
 <!-- hero -->
-<section class="bg-primary pt-28 -mt-28">
+<section class="bg-primary pt-28 -mt-28 reversed">
     <div class="container flex items-center">
       <div class="lg:w-1/2 xl:w-1/3 lg:-mr-40 pt-6 pb-20 lg:pt-0 lg:pb-0 lg:ml-20 z-10">
-        <h1 class="">Stand out from the crowd.</h1>
-        <p class="md:w-3/4 lg:w-full">A talented graphic designer will deliver the best <span class="font-bold">consistent visuals</span> for your business, across <span class="font-bold">multiple platforms.</span>  </p>
+        <h1 class="reversed">Stand out from the crowd.</h1>
+        <p class="reversed md:w-3/4 lg:w-full">A talented graphic designer will deliver the best <span class="reversed font-bold">consistent visuals</span> for your business, across <span class="reversed font-bold">multiple platforms.</span>  </p>
    
         <div class="py-3">
           {% include 'partial/btn',
@@ -27,7 +27,7 @@ title: Title of site
       </div>
       <div class="hidden lg:flex">
       {% include 'partial/img',
-        path: 'home.jpg',
+        path: 'bad-juju.jpg',
         2xl: '&h=800',
         xl: '&h=700',
         lg: '&h=550',
@@ -114,7 +114,7 @@ title: Title of site
       %}
   </div>
     <ul class="w-full grid grid-cols-2 xl:grid-cols-3">
-        {% for work in collections.recent %}
+        {% for work in collections.recent limit:6 %}
         <li class="relative group overflow-hidden">
           <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block bg-gray-900 opacity-20 z-20"></div>
           <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex items-center z-30">
@@ -147,7 +147,7 @@ title: Title of site
   <div class="container flex flex-wrap">
     <span class="-mt-16 lg:w-1/4">
       {% include 'partial/img', 
-        path: 'avatar5.jpg',
+        path: 'avatar.jpg',
         2xl: '&w=350',
         xl: '&w=320',
         lg: '&w=250',
@@ -207,7 +207,7 @@ title: Title of site
 
   </div>
   <div class="w-full lg:w-2/3 my-3 relative group overflow-hidden rounded-lg">
-    {% for work in collections.featuredWebsite %}
+    {% for work in collections.website limit:1 %}
         <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
           <div class="absolute w-full h-full hidden group-hover:flex items-center">
             <div class="mx-auto text-center text-white z-30">
@@ -259,7 +259,7 @@ title: Title of site
         %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
-    {% for work in collections.featuredBranding %}
+    {% for work in collections.branding limit:1 %}
     <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
@@ -306,7 +306,7 @@ title: Title of site
         %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
-    {% for work in collections.featuredLayout %}
+    {% for work in collections.layout limit:1 %}
     <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
@@ -352,7 +352,7 @@ title: Title of site
         %}
   </div>
   <div class="w-full lg:w-7/12 my-3 group relative overflow-hidden rounded-lg">
-    {% for work in collections.featuredAdvertising %}
+    {% for work in collections.advertising limit:1 %}
     <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
@@ -464,7 +464,7 @@ title: Title of site
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
 
-    {% for work in collections.featuredPackaging %}
+    {% for work in collections.packaging limit:1 %}
     <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
@@ -511,7 +511,7 @@ title: Title of site
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
 
-    {% for work in collections.featuredIllustration %}
+    {% for work in collections.illustration limit:1 %}
     <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
@@ -559,7 +559,7 @@ title: Title of site
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
 
-    {% for work in collections.featuredEvents %}
+    {% for work in collections.events limit:1 %}
     <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
@@ -634,7 +634,7 @@ title: Title of site
     </p>
   </div>
   <ul class="w-full grid grid-cols-3 gap-8 my-8">
-      {% for work in collections.artwork  %}
+      {% for work in collections.artwork limit:6  %}
       <li class="relative group overflow-hidden">
         <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
         <div class="absolute w-full h-full hidden group-hover:flex items-center z-30">
