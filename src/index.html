@@ -186,17 +186,18 @@ title: Title of site
 
 <!-- website section -->
 <section class="container flex flex-wrap justify-between items-center pb-20 ">
-  <div class="w-full lg:w-1/4">
+  <div class="w-full lg:w-1/3">
     {% include 'partial/icon-box',
     icon: 'user-friends',
     class: 'block'
     %}
     <h2>Website front-end</h2>
-    <p class="text-lg">
-      <strong>Don't forget to add a bit about Tailwind being awesome for illustrations</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua.
+    <p class="">
+      I used to build WordPress and Magento themes back in the day and am very familiar with most major CMS platforms.
     </p>
-    <p>Framework list</p>
+    <p class="">
+      These days I've dipped a toe into Next.js, but largely use Jamstack frameworks with Tailwind and Alpine on top.
+    </p>
 
     {% include 'partial/btn',
     url: '/assets/file/corbin_featherstone.pdf',
@@ -206,7 +207,7 @@ title: Title of site
     %}
 
   </div>
-  <div class="w-full lg:w-2/3 my-3 relative group overflow-hidden rounded-lg">
+  <div class="w-full lg:w-7/12 my-3 relative group overflow-hidden rounded-lg">
     {% for work in collections.website limit:1 %}
         <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
           <div class="absolute w-full h-full hidden group-hover:flex items-center">

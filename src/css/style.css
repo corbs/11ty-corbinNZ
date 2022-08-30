@@ -10,10 +10,17 @@
 }
 
 .reversed::selection {
-  @apply  text-white;
+  @apply  bg-gray-50;
 }
 .reversed::-moz-selection {
-  @apply  text-white;
+  @apply  bg-gray-50;
+}
+
+h1.work::selection {
+  @apply  text-gray-50 bg-primary-light;
+}
+h1.work::-moz-selection {
+  @apply  text-gray-50 bg-primary-light;
 }
 
   body {
@@ -21,13 +28,16 @@
     @apply text-gray-900 leading-relaxed;
   }
   
+  p {
+    @apply pb-2;
+  }
   p a {
     @apply font-bold;
     }
   
   p a:hover {
     text-decoration: underline;
-      text-underline-offset: 8px;
+    text-underline-offset: 8px;
   }
   
   h1, .h1 {
