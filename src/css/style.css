@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 ::selection {
-  @apply bg-primary-light text-gray-900;
+  @apply bg-primary-light text-slate-900;
 }
 ::-moz-selection {
-  @apply bg-primary-light text-gray-900;
+  @apply bg-primary-light text-slate-900;
 }
 
 .reversed::selection {
-  @apply  bg-gray-50;
+  @apply  bg-slate-50;
 }
 .reversed::-moz-selection {
-  @apply  bg-gray-50;
+  @apply  bg-slate-50;
 }
 
 h1.work::selection {
-  @apply  text-gray-50 bg-primary-light;
+  @apply  text-slate-50 bg-primary-light;
 }
 h1.work::-moz-selection {
-  @apply  text-gray-50 bg-primary-light;
+  @apply  text-slate-50 bg-primary-light;
 }
 
   body {
     font-family: 'Roboto Slab', serif;
-    @apply text-gray-900 leading-relaxed;
+    @apply text-slate-900 leading-relaxed;
   }
   
   p {
@@ -64,7 +64,7 @@ h1.work::-moz-selection {
     }
   
   .menu a:hover {
-    @apply border-gray-900  ;
+    @apply border-slate-900  ;
     }
   
   .breadcrumbs li::after {

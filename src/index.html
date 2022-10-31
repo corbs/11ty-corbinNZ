@@ -14,12 +14,12 @@ title: Title of site
           {% include 'partial/btn',
           url: '/contact',
           text: 'Get in touch',
-          class: 'my-2 mr-4 border-2 border-gray-900 bg-gray-900 text-primary hover:text-primary-light hover:shadow',
+          class: 'my-2 mr-4 border-2 border-slate-900 bg-slate-900 text-primary hover:text-primary-light hover:shadow',
           %}
           {% include 'partial/btn',
           url: 'assets/file/corbin_featherstone.pdf',
           text: 'My portfolio',
-          class: 'my-2 border-2 border-gray-900 hover:bg-primary-light',
+          class: 'my-2 border-2 border-slate-900 hover:bg-primary-light',
           icopost: 'arrow-up-right'
           %}
   
@@ -55,7 +55,7 @@ title: Title of site
       <p class="font-bold text-4xl lg:text-5xl py-4">
         Communicate. Information. Visually.
       </p>
-      <p class="text-xl text-gray-500">
+      <p class="text-xl text-slate-500">
         I'm a graphic designer with a long history churning out quality work that solves problems. Here's a few examples of <span class="border-b-2 border-current">how</span> I work.
       </p>
     </div>
@@ -67,7 +67,7 @@ title: Title of site
               %}
             <div class="py-4 lg:py-6 px-8 lg:px-12">
             <h4 class="pt-2">Brand design</h4>
-            <p class="mt-2 mb-4 text-gray-500">
+            <p class="mt-2 mb-4 text-slate-500">
               Identity packages, logos, emblems
             </p>
             </div>
@@ -79,7 +79,7 @@ title: Title of site
               %}
             <div class="py-4 lg:py-6 px-8 lg:px-12">
             <h4 class="pt-2">Image processing</h4>
-            <p class="mt-2 mb-4 text-gray-500">
+            <p class="mt-2 mb-4 text-slate-500">
               Keep you user engaged by providing meaningful information.
             </p>
             </div>
@@ -91,7 +91,7 @@ title: Title of site
               %}
             <div class="py-4 lg:py-6 px-8 lg:px-12">
             <h4 class="pt-2">Hand crafted</h4>
-            <p class="mt-2 mb-4 text-gray-500">
+            <p class="mt-2 mb-4 text-slate-500">
               I still enjoy picking up the pencil or paintbrush to create original illustrations.
             </p>
             </div>
@@ -103,20 +103,20 @@ title: Title of site
 <section class="container py-24">
   <div class="w-full">
     <h2>Recent work</h2>
-    <p class="text-lg text-gray-500 pb-8 lg:w-1/2">
+    <p class="text-lg text-slate-500 pb-8 lg:w-1/2">
       The projects on this site represent a small section of my portfolio. Each item has been designed by myself, from concept to completion. Copyright belongs entirely to the company the work was created for, used with permission. 
     </p>
     {% include 'partial/btn',
       url: '/work',
       text: 'All work',
-      class: 'my-3 border border-gray-200 bg-white hover:border-gray-500',
+      class: 'my-3 border border-slate-200 bg-white hover:border-slate-500',
       icopost: 'angle-right'
       %}
   </div>
     <ul class="w-full grid grid-cols-2 xl:grid-cols-3">
         {% for work in collections.recent limit:6 %}
         <li class="relative group overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block bg-gray-900 opacity-20 z-20"></div>
+          <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block bg-slate-900 opacity-20 z-20"></div>
           <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex items-center z-30">
             <div class="mx-auto text-center text-white">
               <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -124,7 +124,7 @@ title: Title of site
               {% include 'partial/btn',
                 url: work.url,
                 text: 'View project',
-                class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+                class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
                 %}
             </div>
           </div>
@@ -158,25 +158,25 @@ title: Title of site
     </span>
     <div class="p-6 lg:p-12 w-full lg:w-3/4">
       <h2>About me</h2>
-      <p class="text-gray-500 text-lg pb-6">
+      <p class="text-slate-500 text-lg pb-6">
         I'm a process oriented graphic designer with decades of experience, working nearly every role in the industry. 
       </p>
       <ul class="grid md:grid-cols-2 gap-6">
         <li class="">
           <h6 class="text-base">Productive under pressure</h6>
-          <p class="text-gray-500">I've done my time in the trenches and know what it takes to push a project home with my sense of humour intact.</p>
+          <p class="text-slate-500">I've done my time in the trenches and know what it takes to push a project home with my sense of humour intact.</p>
         </li>
         <li class="">
           <h6 class="text-base">Front-line big brand experience</h6>
-          <p class="text-gray-500">Juggling Familiar with the entire design process, from ideation to print.</p>
+          <p class="text-slate-500">Juggling Familiar with the entire design process, from ideation to print.</p>
         </li>
         <li class="">
           <h6 class="text-base">Diverse skillset</h6>
-          <p class="text-gray-500">I work well with other teams as I've almost certainly been in the role that I'm working with. Giving me insight into decisions that are easy to accomplish with an easy win, and the frustrations and blockers.</p>
+          <p class="text-slate-500">I work well with other teams as I've almost certainly been in the role that I'm working with. Giving me insight into decisions that are easy to accomplish with an easy win, and the frustrations and blockers.</p>
         </li>
         <li class="">
           <h6 class="text-base">Plays well with others</h6>
-          <p class="text-gray-500">I don't have an ego that needs stroking and focus on decisions that are sensible for the whole company, this often means adapting to the needs of the team. Providing useful contributions, mentoring and support.</p>
+          <p class="text-slate-500">I don't have an ego that needs stroking and focus on decisions that are sensible for the whole company, this often means adapting to the needs of the team. Providing useful contributions, mentoring and support.</p>
         </li>
 
       </ul>
@@ -202,14 +202,14 @@ title: Title of site
     {% include 'partial/btn',
     url: '/assets/file/corbin_featherstone.pdf',
     text: 'All Websites',
-    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    class: 'my-5 border border-slate-200 bg-white hover:border-slate-500',
     icopost: 'angle-right'
     %}
 
   </div>
   <div class="w-full lg:w-7/12 my-3 relative group overflow-hidden rounded-lg">
     {% for work in collections.website limit:1 %}
-        <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+        <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
           <div class="absolute w-full h-full hidden group-hover:flex items-center">
             <div class="mx-auto text-center text-white z-30">
               <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -217,13 +217,13 @@ title: Title of site
               {% include 'partial/btn',
                 url: work.url,
                 text: 'View project',
-                class: 'm-2 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+                class: 'm-2 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
                 %}
                 {% include 'partial/btn',
                 url: work.url,
                 text: 'Website',
                 icopost: 'arrow-up-right',
-                class: 'm-2 py-2 cursor-pointer text-gray-200 border border-black bg-gray-900 hover:bg-gray-800'
+                class: 'm-2 py-2 cursor-pointer text-slate-200 border border-black bg-slate-900 hover:bg-slate-800'
                 %}
             </div>
           </div>
@@ -255,13 +255,13 @@ title: Title of site
       {% include 'partial/btn',
         url: '/assets/file/corbin_featherstone.pdf',
         text: 'All Branding',
-        class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+        class: 'my-5 border border-slate-200 bg-white hover:border-slate-500',
         icopost: 'angle-right'
         %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
     {% for work in collections.branding limit:1 %}
-    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
         <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -269,7 +269,7 @@ title: Title of site
         {% include 'partial/btn',
           url: work.url,
           text: 'View project',
-          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
           %}
       </div>
     </div>
@@ -302,13 +302,13 @@ title: Title of site
       {% include 'partial/btn',
         url: '/work',
         text: 'All Layout',
-        class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+        class: 'my-5 border border-slate-200 bg-white hover:border-slate-500',
         icopost: 'angle-right'
         %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
     {% for work in collections.layout limit:1 %}
-    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
         <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -316,7 +316,7 @@ title: Title of site
         {% include 'partial/btn',
           url: work.url,
           text: 'View project',
-          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
           %}
       </div>
     </div>
@@ -348,13 +348,13 @@ title: Title of site
       {% include 'partial/btn',
         url: '/work',
         text: 'All Advertising',
-        class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+        class: 'my-5 border border-slate-200 bg-white hover:border-slate-500',
         icopost: 'angle-right'
         %}
   </div>
   <div class="w-full lg:w-7/12 my-3 group relative overflow-hidden rounded-lg">
     {% for work in collections.advertising limit:1 %}
-    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
         <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -362,7 +362,7 @@ title: Title of site
         {% include 'partial/btn',
           url: work.url,
           text: 'View project',
-          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
           %}
       </div>
     </div>
@@ -393,7 +393,7 @@ title: Title of site
     <div class="p-12 w-full lg:w-3/4">
       <h5>Software</h5>
       <h2>Add tabs with software icons with hover or click to show projects that have been made using the software</h2>
-      <p class="text-gray-500">
+      <p class="text-slate-500">
         Here's some of the tools I'm most familiar with.
         <ul>
           <li>Indesign</li>
@@ -418,11 +418,11 @@ title: Title of site
 
 <!-- Video editing and Motion graphics -->
 <section class="flex flex-wrap my-24">
-  <div class="flex-1 flex flex-col content-end bg-gray-700 h-96 p-20 text-gray-400">
+  <div class="flex-1 flex flex-col content-end bg-slate-700 h-96 p-20 text-slate-400">
     <h2>Video editing</h2>
     <p>Post my first case study video mashup</p>
   </div>
-  <div class="flex-1 bg-gray-800 h-96 p-20 text-gray-200">
+  <div class="flex-1 bg-slate-800 h-96 p-20 text-slate-200">
     <h2 class="">Motion graphics</h2>
     <p>Shed</p>
   </div>
@@ -438,7 +438,7 @@ title: Title of site
         magna aliqua.
       </p>
     </div>
-    <div class="bg-gray-200 flex-1 flex items-center">
+    <div class="bg-slate-200 flex-1 flex items-center">
       <h2 class="mx-auto">Comparison slider</h2>
     </div>
   </div>
@@ -459,14 +459,14 @@ title: Title of site
     {% include 'partial/btn',
     url: '/work',
     text: 'All Packaging',
-    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    class: 'my-5 border border-slate-200 bg-white hover:border-slate-500',
     icopost: 'angle-right'
     %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
 
     {% for work in collections.packaging limit:1 %}
-    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
         <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -474,7 +474,7 @@ title: Title of site
         {% include 'partial/btn',
           url: work.url,
           text: 'View project',
-          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
           %}
       </div>
     </div>
@@ -506,14 +506,14 @@ title: Title of site
     {% include 'partial/btn',
     url: '/work',
     text: 'All Illustration',
-    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    class: 'my-5 border border-slate-200 bg-white hover:border-slate-500',
     icopost: 'angle-right'
     %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
 
     {% for work in collections.illustration limit:1 %}
-    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
         <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -521,7 +521,7 @@ title: Title of site
         {% include 'partial/btn',
           url: work.url,
           text: 'View project',
-          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
           %}
       </div>
     </div>
@@ -554,14 +554,14 @@ title: Title of site
     {% include 'partial/btn',
     url: '/work',
     text: 'All Events',
-    class: 'my-5 border border-gray-200 bg-white hover:border-gray-500',
+    class: 'my-5 border border-slate-200 bg-white hover:border-slate-500',
     icopost: 'angle-right'
     %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
 
     {% for work in collections.events limit:1 %}
-    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+    <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
         <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -569,7 +569,7 @@ title: Title of site
         {% include 'partial/btn',
           url: work.url,
           text: 'View project',
-          class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+          class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
           %}
       </div>
     </div>
@@ -616,7 +616,7 @@ title: Title of site
         ut labore et dolore magna aliqua.
       </p>
     </div>
-    <div class="bg-gray-200 flex-1 flex items-center">
+    <div class="bg-slate-200 flex-1 flex items-center">
       <h2 class="mx-auto">Comparison slider</h2>
     </div>
   </div>
@@ -639,7 +639,7 @@ title: Title of site
   <ul class="w-full grid grid-cols-3 gap-8 my-8">
       {% for work in collections.artwork limit:6  %}
       <li class="relative group overflow-hidden">
-        <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-gray-900 opacity-20 z-20"></div>
+        <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
         <div class="absolute w-full h-full hidden group-hover:flex items-center z-30">
           <div class="mx-auto text-center text-white">
             <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
@@ -647,7 +647,7 @@ title: Title of site
             {% include 'partial/btn',
               url: work.url,
               text: 'View project',
-              class: 'my-3 py-2 cursor-pointer text-gray-900 border border-primary-dark bg-primary hover:bg-primary-light'
+              class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
               %}
           </div>
         </div>
