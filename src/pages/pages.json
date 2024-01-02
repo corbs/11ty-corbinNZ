@@ -1,0 +1,6 @@
+{
+    "layout": "layout-main",
+    "permalink": "/{{page.fileSlug}}/",
+    "tags": "page",
+    "lang": "en"
+}
