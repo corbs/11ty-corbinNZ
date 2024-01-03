@@ -1,0 +1,185 @@
+<header class="z-40 flex justify-between items-center">
+
+  <!-- Logo -->
+  <a class="cursor-pointer block lg:ml-12 ml-5 px-4 lg:px-5 pt-8 md:pt-10 lg:pt-12 pb-4 lg:pb-5 bg-slate-900 text-primary"
+    href="/">
+    <svg class="w-6 md:w-9 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+      <path class="cls-1" d="M0,0H1V12H0ZM7,1H2V5H7Zm5,5v5H2V6ZM11,7H3v3h8Z" />
+    </svg>
+
+  </a>
+
+
+    <nav class="">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="hidden container lg:block">
+          <menu>
+            <ul class="flex space-x-4 items-center justify-center">
+              <!-- Current: "bg-slate-900 text-white", Default: "text-slate-300 hover:bg-slate-700 hover:text-white" -->
+              <li><a href="/solutions"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-700 hover:text-white">Solutions</a>
+              </li>
+              <li><a href="/products"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-700 hover:text-white">Products</a>
+              </li>
+              <li><a href="/ecosystem"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-700 hover:text-white">Ecosystem</a>
+              </li>
+              <li><a href="/pricing"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-700 hover:text-white">Pricing</a>
+              </li>
+
+              <!-- resources -->
+              <li class="group relative">
+                <a class="text-slate-800 group-hover:bg-slate-700 group-hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  href="/resources">Resources</a>
+                <div
+                  class="hidden group-hover:block absolute left-1/2 z-50 pt-3 w-screen max-w-sm -translate-x-1/2 transform px-2 sm:px-0">
+                  <div class="arrow-up-dark mx-auto"></div>
+                  <div class="overflow-hidden rounded-lg shadow-lg border-2 border-slate-700">
+                    <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+
+                      <a href="/resources/blog"
+                        class="-m-3 flex items-start rounded-md p-2 transition duration-150 ease-in-out hover:bg-slate-50 border border-white hover:border-slate-400">
+                        <div class="ml-4">
+                          <p class="text-base font-medium text-slate-900">Blog</p>
+                          <p class="text-sm p-0 text-slate-500">Come and plant the future with us
+                          </p>
+                        </div>
+                      </a>
+
+                      <a href="/resources/customers"
+                        class="-m-3 flex items-start rounded-md p-2 transition duration-150 ease-in-out hover:bg-slate-50 border border-white hover:border-slate-400">
+                        <div class="ml-4">
+                          <p class="text-base font-medium text-slate-900">Case studies</p>
+                          <p class="text-sm p-0 text-slate-500">You have questions, we have answers
+                          </p>
+                        </div>
+                      </a>
+
+                      <a href="/resources/whats-new"
+                        class="-m-3 flex items-start rounded-md p-2 transition duration-150 ease-in-out hover:bg-slate-50 border border-white hover:border-slate-400">
+                        <div class="ml-4">
+                          <p class="text-base font-medium text-slate-900">What's new</p>
+                          <p class="text-sm p-0 text-slate-500">You have questions, we have answers
+                          </p>
+                        </div>
+                      </a>
+
+                      <a href="/resources/career"
+                        class="-m-3 flex items-start rounded-md p-2 transition duration-150 ease-in-out hover:bg-slate-50 border border-white hover:border-slate-400">
+                        <div class="ml-4">
+                          <p class="text-base font-medium text-slate-900">Careers</p>
+                          <p class="text-sm p-0 text-slate-500">You have questions, we have answers
+                          </p>
+                        </div>
+                      </a>
+
+                      <a href="/resources/events"
+                        class="-m-3 flex items-start rounded-md p-2 transition duration-150 ease-in-out hover:bg-slate-50 border border-white hover:border-slate-400">
+                        <div class="ml-4">
+                          <p class="text-base font-medium text-slate-900">Events</p>
+                          <p class="text-sm p-0 text-slate-500">You have questions, we have answers
+                          </p>
+                        </div>
+                      </a>
+
+                    </div>
+                    <div class="bg-slate-800 border-t px-5 py-5 sm:px-8 sm:py-8">
+                      <p class="font-bold pb-3 text-slate-400">What's new</p>
+                      <div class="text-sm">
+                        {% assign recentnav = collections.work | reverse %}
+                        {% for blog in recentnav limit:3 %}
+                        <p><a class="text-slate-100 font-medium py-1 hover:underline" href="{{ blog.url }}">{{
+                            blog.data.title }}</a></p>
+                        {% endfor %}
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </menu>
+        </div>
+
+        <div class="flex lg:hidden">
+          <!-- Mobile menu button -->
+          <button type="button"
+            class="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!--
+          Icon when menu is closed.
+
+          Heroicon name: outline/bars-3
+
+          Menu open: "hidden", Menu closed: "block"
+        -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+          Icon when menu is open.
+
+          Heroicon name: outline/x-mark
+
+          Menu open: "block", Menu closed: "hidden"
+        -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="lg:hidden absolute top-0 right-0" id="mobile-menu">
+        <div class="space-y-1 px-2 pt-2 pb-3">
+          <!-- Current: "bg-slate-900 text-white", Default: "text-slate-300 hover:bg-slate-700 hover:text-white" -->
+          <a href="#" class="block rounded-md bg-slate-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+          <a href="#"
+            class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Team</a>
+          <a href="#"
+            class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Projects</a>
+          <a href="#"
+            class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Calendar</a>
+        </div>
+        <div class="border-t border-slate-700 pt-4 pb-3">
+          <div class="flex items-center px-5">
+            <div class="flex-shrink-0">
+              <img class="h-10 w-10 rounded-full"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt="">
+            </div>
+            <div class="ml-3">
+              <div class="text-base font-medium text-white">Tom Cook</div>
+              <div class="text-sm font-medium text-slate-400">tom@example.com</div>
+            </div>
+            <button type="button"
+              class="ml-auto flex-shrink-0 rounded-full bg-slate-800 p-1 text-slate-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-800">
+              <span class="sr-only">View notifications</span>
+              <!-- Heroicon name: outline/bell -->
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-3 space-y-1 px-2">
+            <a href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-slate-400 hover:bg-slate-700 hover:text-white">Your
+              Profile</a>
+            <a href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-slate-400 hover:bg-slate-700 hover:text-white">Settings</a>
+            <a href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-slate-400 hover:bg-slate-700 hover:text-white">Sign
+              out</a>
+          </div>
+        </div>
+    </nav>
+</header>
