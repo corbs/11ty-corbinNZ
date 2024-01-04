@@ -1,0 +1,91 @@
+
+<div class="container flex flex-col-reverse lg:flex-row justify-between">
+
+	<p class="font-serif text-4xl">What's new</p>
+	
+	<div class="flex">
+		<div class="mr-5">
+			<span class="block rounded border border-slate-400 bg-white py-2 px-5 leading-5 text-slate-800 placeholder-slate-500 focus:border-slate-800 shadow-sm focus:text-slate-900 focus:outline-none focus:ring-slate-800 sm:text-sm"><i class="fa-regular fa-newspaper pr-2"></i> Articles<i class="fa-solid fa-angle-down pl-8" data-fa-transform="down-2"></i></span>
+		</div>
+
+		<div class="mr-10">
+			<span class="block rounded border border-slate-400 bg-white py-2 px-5 leading-5 text-slate-800 placeholder-slate-500 focus:border-slate-800 shadow-sm focus:text-slate-900 focus:outline-none focus:ring-slate-800 sm:text-sm"><i class="fa-regular fa-folder pr-2"></i> Categories <i class="fa-solid fa-angle-down pl-8" data-fa-transform="down-2"></i></span>
+		</div>
+	
+
+		<div class="group w-full md:w-1/2 lg:w-1/3 xl:w-1/4 relative" x-data="getUsers()">
+			<input
+				x-ref="searchInput"
+				x-model="search"
+				x-on:keydown.window.prevent.slash="$refs.searchInput.focus()"
+				placeholder="Search..."
+				type="search"
+				class="block w-full rounded border border-slate-400 hover:border-slate-600 bg-white py-2 pl-6 pr-3 leading-5 text-slate-800 placeholder-slate-500 focus:border-slate-800 shadow-sm focus:text-slate-900 focus:outline-none focus:ring-slate-800 sm:text-sm  "
+			/>
+
+			<div class="mx-5 hidden group-focus-within:block absolute top-10 z-30">
+				<div class="arrow-up-dark mx-auto"></div>
+				<div class="bg-white mx-auto max-h-[45rem] overflow-y-scroll shadow-xl border-2 overflow-hidden border-slate-700 -mx-5 lg:-mx-28">
+					<template x-for="user in filteredUsers" :key="user.id">
+						<a x-bind:href="user.url" class="flex flex-1 bg-slate-50 hover:bg-white items-start p-4 border-b border-slate-300">
+							<img class="mr-6" :src="'https://agw.imgix.net/' + user.image + '?auto=format&w=100&h=100&fit=crop'" />
+							<div class="">
+								<p><span class="text-xs uppercase font-medium tracking-widest text-slate-500" x-text="user.category"></span></p>
+								<p class="text-xl font-bold text-gray-900" x-text="user.title"></p>
+								<p class="text-gray-600" x-text="user.description"></p>
+							</div>
+						</a>
+					</template>
+					<div class="flex flex-col items-center my-20 pb-12">
+					<p class="text-2xl font-serif text-center mt-10 pb-3">Can't find what you're looking for?</p>
+					<a href="/resources" class="block bg-slate-100 border border-slate-200 rounded hover:border-slate-400 py-2 px-12">Browse all articles</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+</div>
+
+
+		<script>
+			function getUsers() {
+				return {
+					search: '',
+					allData: userData,
+					get filteredUsers() {
+						if (this.search === '') {
+							return this.allData;
+						}
+						return this.allData.filter((user) => {
+							return user.title
+								.replace(/ /g, '')
+								.toLowerCase()
+								.includes(this.search.replace(/ /g, '').toLowerCase());
+						});
+					}
+				};
+			}
+
+			const userData = [
+				{% assign i = 1 %}
+				{% assign recentarticle = collections.article | reverse %}
+				{% for item in recentarticle %}
+				{
+					"id": "{{ i }}",
+					"title": "{{ item.data.title }}",
+					"description": "{{ item.data.description }}",
+					"heading": "{{ item.data.heading }}",
+					"category": "{{ item.data.article }}",
+					"url": "{{ item.url }}",
+					"image": "{{ item.data.image }}"
+				}
+				{% if not loop.last %},{% endif %}
+				{% assign i = i | plus: 1 %}
+				{% endfor %}
+			];
+		</script>

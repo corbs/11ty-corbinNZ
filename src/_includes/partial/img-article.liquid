@@ -1,0 +1,51 @@
+<picture>
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=950&h=470&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                  https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=950&h=470&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x"
+                  media="(min-width: 1536px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=1500&h=600&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                  https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=1500&h=600&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x"
+                  media="(min-width: 1280px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=1500&h=200&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                  https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=1500&h=200&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x"
+                  media="(min-width: 1024px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=500&h=600&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                  https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=500&h=600&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x"
+                  media="(min-width: 769px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=200&h=200&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                  https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=200&h=200&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x"
+                  media="(min-width: 60px)">
+  <img
+    src="https://agw.imgix.net/{{ path }}?auto=format&w=1500&h=600&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %}"
+    alt="{% if imgalt %}{{ imgalt }}{% else %}Agworld | Connecting the industry{% endif %}"
+  class="lazyload {% if class %}{{ class }}{% endif %}">
+
+  {% if caption %}
+  <p class="font-serif pl-4 border-l-4 border-slate-600 pt-0 mt-0">{{ caption }}</p>
+  {% endif %}
+</picture>
+
+{% comment %} <picture
+  itemprop="image"
+  itemscope
+  itemtype="https://schema.org/ImageObject">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=1100&h=680&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                                                              https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=890&h=380&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x" media="(min-width: 1536px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=890&h=700&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                                                              https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=890&h=400&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x" media="(min-width: 1280px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=890&h=200&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                                                              https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=890&h=400&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x" media="(min-width: 1024px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=890&h=400&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                                                              https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=890&h=400&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x" media="(min-width: 769px)">
+  <source srcset="https://agw.imgix.net/{{ path }}?auto=format&w=890&h=100&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 1x,
+                                                              https://agw.imgix.net/{{ path }}?auto=format&dpr=2&w=890&h=400&fit=crop{% if page.url contains '/new/' %}&bri=-10&sat=-100{% endif %} 2x" media="(min-width: 60px)">
+  <img
+    itemprop="contentUrl"
+    src="https://agw.imgix.net/{{ path }}?auto=format&w=890&h=400&fit=crop"
+    alt="{% if caption %}{{ caption }}{% else %}Agworld customer{% endif %}"
+    class="lazyload {{ class }}">
+
+  {% if caption %}
+    <span itemprop="caption" class="-mt-4 block text-slate-800 border-l-4 pl-3 border-slate-700 italic font-serif">{{ caption }}</span>
+  {% endif %}
+
+</picture> {% endcomment %}

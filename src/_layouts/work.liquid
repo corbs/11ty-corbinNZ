@@ -9,13 +9,20 @@
     <!-- top header -->
     <div class="container pt-32 pb-16 z-10">
 
-      <ul class="text-slate-800 tracking-tight flex items-center text-sm font-semibold ">
-        <li><a href="/"><i class="fa-solid fa-house"></i></a><span class="px-4">/</span></li>
-        <li><a href="/resources" class="hover:underline">Resources</a><span class="px-4">/</span></li>
-        <li><a href="/resources/blog" class="hover:underline">Blog</a><span class="px-4">/</span></li>
-        <li class="text-slate-500 block w-28 hover:w-auto font-normal truncate ...">{{ title }}</li>
-      </ul>
-      <h1 itemprop="headline" class="text-slate-800 font-serif text-5xl md:text-6xl lg:text-7xl leading-snug">{{ title }}</h1>
+      <div class="flex flex-wrap justify-between text-sm">
+        <ul class="text-slate-800 tracking-tight flex items-center font-bold ">
+          <li><a href="/"><i class="fa-solid fa-house"></i></a><span class="px-4">/</span></li>
+          <li><a href="/resources" class="hover:underline">Resources</a><span class="px-4">/</span></li>
+          <li><a href="/resources/blog" class="hover:underline">Blog</a><span class="px-4">/</span></li>
+          <li class="text-slate-500 block w-28 hover:w-auto font-normal truncate ...">{{ title }}</li>
+        </ul>
+        <div class="flex items-center ">
+          <i class="block fa-regular text-slate-700 fa-calendar mr-2 ml-8 text-lg"></i> <time itemprop="datePublished" class="font-semibold">{{ page.date | date: "%d %b, %Y" }}</time>
+          <i class="block fa-regular text-slate-700 fa-folder mr-2 ml-8 text-lg"></i> <span itemprop="keywords" class="font-semibold">{% if category %}{{ category }}{% else %}Blog{% endif %}</span>
+        </div>
+      </div>
+
+      <h1 itemprop="headline" class="text-slate-800 font-serif text-6xl md:text-7xl lg:text-8xl leading-snug">{{ title }}</h1>
 
       <!-- info boxes -->
       <ul class="flex pt-4">
@@ -45,14 +52,14 @@
       </div>
       </li>
       </ul>
-      </div>
+    </div>
   </div>
 
   <div class="container z-10">
     {% include 'partial/img',
     path: image,
     imgalt: title,
-    2xl: '&w=1400&h=600&fit=crop',
+    2xl: '&w=1500&h=600&fit=crop',
     xl: '&w=400&h=100&fit=crop',
     lg: '&w=100&h=100&fit=crop',
     md: '&w=100&h=100&fit=crop',
@@ -61,12 +68,12 @@
     %}
   </div>
 
-  <div class="container flex flex-col lg:flex-row my-6">
+  <div class="container flex flex-col lg:flex-row my-8">
 
-    <div class="lg:w-3/4 lg:pr-20">
+    <div class="lg:w-3/4 lg:pr-28">
 
       <div class="flex justify-between items-start mb-8">
-        <span itemprop="about" class="block py-1 pl-4 pr-5 border-l-4 border-slate-800 font-serif italic text-lg">{{ description }}</span>
+        <span itemprop="about" class="block py-1 pl-4 pr-10 border-l-4 border-slate-800 font-serif italic text-xl leading-relaxed">{{ description }}</span>
         <!-- share -->
         {% include 'partial/share', position: 'absolute top-7 left-0', arrow: 'mr-auto ml-10 mt-1' %}
       </div>
@@ -108,7 +115,7 @@
 
       <!-- Follow us -->
       <div class="my-12">
-        <h4 class="text-center font-bold text-3xl pb-4 font-serif">Follow Agworld</h4>
+        <h4 class="text-center font-bold text-3xl pb-4">Follow Agworld</h4>
         {% include 'partial/socmed',
         class: 'text-center',
         linkClass: 'inline-block px-3 py-2 m-1 border-b-4 border-slate-50 hover:border-slate-900'
@@ -117,12 +124,17 @@
 
     </div>
 
+    <!-- Sidebar -->
     <aside class="lg:w-1/4">
       <div class="lg:sticky lg:top-6">
         <div class="mx-auto">
-        <a href="*" class="hidden lg:flex w-full items-center justify-center rounded bg-brand px-3 py-3 mb-6 text-sm font-medium text-white hover:bg-brand-hover border border-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-hover focus:ring-offset-2">Start with Agworld <i class="pl-4 fa-solid fa-angle-right fa-beat"></i></a>
-        <h4 class="font-bold text-2xl text-slate-800 pb-2 font-serif">Recent</h4>
-        {% assign posts = collections.blog | reverse %}
+          {% include 'partial/btn',
+          url: 'contact',
+          text: 'Start today',
+          class: 'mb-2 border border-primary-dark bg-primary hover:bg-primary-light hover:shadow w-full text-center py-5 text-xl'
+        %}
+        <h3 class="font-bold text-2xl text-slate-800 pb-2">Recent</h3>
+        {% assign posts = collections.work | reverse %}
         {% assign i = 0 %}
         {% for items in posts limit: 3 %}
         {% if items.url != page.url %}

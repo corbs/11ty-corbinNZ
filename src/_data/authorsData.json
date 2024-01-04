@@ -1,0 +1,20 @@
+{
+  "Corbs": {
+    "name": "Corbin Featherstone",
+    "position": "Senios Designer",
+    "avatar": "authors/reinder_prins.jpg",
+    "email": "corbin.featherstone@gmail.com",
+    "phone": "",
+    "linkedin": "corbinfeatherstone",
+    "bio": "Reinder Prins, originally from The Netherlands, is Chief Marketing Officer for Agworld and based in Perth, Western Australia. Prior to this, he was Precision Ag adoption lead for an ag retailer focused on the cotton industry on Australia’s east coast. He then moved to South America and worked as a freelancer in the space of digital agriculture, before returning back to Australia. He has in-depth knowledge of the precision agriculture landscape through working with some of the largest growers in Australia and also with a range of service providers spanning multiple continents."
+  },
+  "Emily": {
+    "name": "Emily Mertes",
+    "position": "Marketing Coordinator",
+    "avatar": "staff/emily_mertes.jpg",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "bio": "Emily Mertes started her career at Agworld on the Customer Success Team and is currently part of Agworld's marketing team, leading all marketing initiatives in North America. She grew up on the east coast and attended Virginia Tech where she graduated with a degree in Agricultural Economics. Currently living in Sacramento, California, when Emily isn't working you can find her running or hiking, reading a good book, or trying a new recipe.  Contact emily.mertes@agworld.com"
+  }
+}
