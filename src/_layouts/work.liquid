@@ -12,8 +12,8 @@
       <div class="flex flex-wrap justify-between text-sm">
         <ul class="text-slate-800 tracking-tight flex items-center font-bold ">
           <li><a href="/"><i class="fa-solid fa-house"></i></a><span class="px-4">/</span></li>
-          <li><a href="/resources" class="hover:underline">Resources</a><span class="px-4">/</span></li>
-          <li><a href="/resources/blog" class="hover:underline">Blog</a><span class="px-4">/</span></li>
+          <li><a href="/work" class="hover:underline">work</a><span class="px-4">/</span></li>
+          {% if category %}<li><a href="/work/{{ category }}" class="hover:underline">{{ category }}</a><span class="px-4">/</span></li>{% endif %}
           <li class="text-slate-500 block w-28 hover:w-auto font-normal truncate ...">{{ title }}</li>
         </ul>
         <div class="flex items-center ">
@@ -28,29 +28,36 @@
       <ul class="flex pt-4">
       {% if author %}
         <li class="flex items-center">
-        <i class="block fa-regular text-slate-700 fa-square-user mr-4" style="font-size: 1.71rem;"></i>
+        <i class="block fa-solid text-slate-700 fa-square-user mr-4" style="font-size: 1.71rem;"></i>
         <div class="pr-6 mr-6 border-r border-slate-300">
-        <h4 class="text-sm text-slate-500"> Author</h4>
-        <span class="font-semibold"> {{ authorsData[author].name }} </span>
+        <h4 class="text-sm text-slate-500">Designer</h4>
+        <span class="font-semibold">{{ authorsData[author].name }}</span>
         </div>
         </li>
       {%- endif -%}
 
+      {% if client %}
       <li class="flex items-center">
-      <i class="block fa-regular text-slate-700 fa-calendar mr-4 text-2xl"></i>
+      <i class="block fa-solid text-slate-700 fa-buildings mr-4 text-2xl"></i>
       <div class="pr-6 mr-6 border-r border-slate-300">
-      <h4 class="text-sm text-slate-500">Date</h4>
-      <time itemprop="datePublished" class="font-semibold">{{ page.date | date: "%d %b, %Y" }}</time>
+      <h4 class="text-sm text-slate-500">Client</h4>
+      <time itemprop="datePublished" class="font-semibold">{{ client }}</time>
       </div>
       </li>
-      
+      {%- endif -%}
+
+      {% if tools %}
       <li class="flex items-center">
-      <i class="block fa-regular text-slate-700 fa-folder mr-4 text-2xl"></i>
+      <i class="block fa-solid text-slate-700 fa-wrench mr-4 text-2xl"></i>
       <div class="pr-6 mr-6">
-      <h4 class="text-sm text-slate-500">Category</h4>
-      <span itemprop="keywords" class="font-semibold">{% if category %}{{ category }}{% else %}Blog{% endif %}</span>
+      <h4 class="text-sm text-slate-500">Tools</h4>
+      {% for tool in tools %}
+        <span class="font-semibold pr-3">{{ tool }}</span>
+      {% endfor %}
       </div>
       </li>
+      {%- endif -%}
+
       </ul>
     </div>
   </div>
@@ -93,23 +100,23 @@
         {% include 'partial/img',
         path: authorsData[author].avatar,
         imgalt: authorsData[author].name,
-        class: 'border-4 border-white rounded-md shadow-sm mr-5',
-        2xl: '&w=70&h=70&fit=crop',
-        xl: '&w=70&h=70&fit=crop',
-        lg: '&w=70&h=70&fit=crop',
-        md: '&w=70&h=70&fit=crop',
-        sm: '&w=70&h=70&fit=crop',
+        class: 'border-4 border-white rounded-md bg-primary p-3 shadow-sm mr-5',
+        2xl: '&w=60&h=60&fit=crop',
+        xl: '&w=60&h=60&fit=crop',
+        lg: '&w=60&h=60&fit=crop',
+        md: '&w=60&h=60&fit=crop',
+        sm: '&w=60&h=60&fit=crop',
         %}
         <div>
         <h4 itemprop="name" class="pt-1 font-bold"> {{ authorsData[author].name }} </h4>
         <p itemprop="jobTitle" class=""> {{ authorsData[author].position }} </p>
         </div>
-        </div>
+      </div>
       <p itemprop="description" class="text-slate-600 pt-5"> {{ authorsData[author].bio }} </p>
       <p itemprop="email" class="text-slate-600 pt-5"> {{ authorsData[author].email }} </p>
       <p itemprop="telephone" class="text-slate-600 pt-5"> {{ authorsData[author].phone }} </p>
       <a itemprop="url" class="text-slate-600 pt-5" href="https://www.linkedin.com/in/{{ authorsData[author].linkedin }}">Follow me </a>
-    </div>
+      </div>
     {%- endif -%}
 
 

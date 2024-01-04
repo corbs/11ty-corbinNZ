@@ -1,6 +1,6 @@
 {
     "layout": "work",
-    "permalink": "/{{page.fileSlug}}/",
+    "permalink": "/work/{{page.fileSlug}}/",
     "tags": "work",
     "lang": "en"
 }

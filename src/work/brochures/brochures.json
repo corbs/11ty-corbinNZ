@@ -1,0 +1,4 @@
+{
+    "categories": "brochures",
+    "permalink": "/work/brochures/{{page.fileSlug}}/"
+}

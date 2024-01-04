@@ -51,7 +51,7 @@ h1.work::-moz-selection {
 
   h3, .h3 {
     font-family: 'Roboto Slab', serif;
-    @apply text-4xl leading-tight font-bold mb-3 mt-5;
+    @apply text-4xl leading-tight font-bold;
     }
 
   h4, .h4 {
