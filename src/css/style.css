@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base extension */
+@layer base {
+
 ::selection {
   @apply bg-primary-light text-slate-900;
 }
@@ -72,11 +75,4 @@ h1.work::-moz-selection {
   .menu a:hover {
     @apply border-slate-900  ;
     }
-  
-  .breadcrumbs li::after {
-    content: "/";
-  }
-  
-  .breadcrumbs li:last-child::after {
-    content: none;
-  }
+}
