@@ -2,10 +2,12 @@
 title: About Corbin Featherstone
 ---
 
+
+
 <!-- About me -->
-<section class=" w-full bg-white border-y mt-40 mb-12">
+<section class=" w-full bg-white border-y mt-32 mb-12">
     <div class="container flex flex-wrap">
-        <span class="-mt-16 lg:w-1/4">
+        <span class="-mt-10 lg:w-1/4">
             {% include 'partial/img',
             path: 'avatar.jpg',
             2xl: '&w=350',
@@ -51,6 +53,15 @@ title: About Corbin Featherstone
     </div>
 </section>
 
+<!-- Quote -->
+<section class="container pt-20 ">
+    {% include 'partial/quote-lg',
+    quote: "...the truth is, it's not the idea, it's never the idea, it's always what you do with it.",
+    attribute: 'Neil Gaiman',
+    class: ''
+    %}
+  </section>
+
 <!-- Skillset -->
 <section class="container flex flex-wrap">
     <div class="p-12 w-full lg:w-3/4">
@@ -79,14 +90,7 @@ title: About Corbin Featherstone
     </div>
   </section>
 
-<!-- Quote -->
-<section class="container py-20 ">
-    {% include 'partial/quote-lg',
-    quote: "...the truth is, it's not the idea, it's never the idea, it's always what you do with it.",
-    attribute: 'Neil Gaiman',
-    class: ''
-    %}
-  </section>
+
 
 <!-- What does a designer do for my company? -->
 <section class="container py-24 ">
