@@ -1,21 +1,31 @@
-    <!-- Share -->
-    <div class="relative group text-slate-700 z-10">
-      <button class="flex h-8 items-center border border-slate-400 rounded px-3 font-semibold hover:border-slate-400 hover:border-slate-800 bg-white hover:text-slate-900 group-focus-within:bg-slate-800 group-focus-within:text-slate-100 group-focus-within:border-slate-900"><i class="block fa-solid fa-up-from-bracket mr-2 "></i> <span class="block">Share</span></button>
-    <div class="{{ position }} hidden group-focus-within:block">
-      <div class="arrow-up-dark {{ arrow }}"></div>
-      <div class="bg-white border-2 border-slate-700 shadow-lg -mr-4 ">
-        <a href="https://twitter.com/intent/tweet?text={{ description }}&via=Agworld&url=https://agworld-redesign.netlify.app{{ page.url | url }}&utm_medium=share&utm_source=twitter" target="_blank" class="group flex items-center text-slate-800 no-underline pl-5 pr-7 font-semibold py-4 border-b border-slate-300 hover:bg-slate-50">
-        <span class="fa-brands fa-square-twitter mr-4 text-2xl"></span>
-        <span class="pr-10">Twitter</span>
-        <i class="block ml-auto text-sm fa-solid fa-angle-right fa-beat"></i></a> 
-        <a href="https://www.facebook.com/sharer.php?u=https://agworld-redesign.netlify.app{{ page.url | url }}&utm_medium=share&utm_source=facebook" target="_blank" class="group flex items-center text-slate-800 no-underline pl-5 pr-7 font-semibold py-4 border-b border-slate-300 hover:bg-slate-50">
-        <span class="fa-brands fa-square-facebook mr-4 text-2xl"></span>
-        <span class="pr-10">Facebook</span>
-        <i class="block ml-auto text-sm fa-solid fa-angle-right fa-beat"></i></a> 
-        <a href="https://www.linkedin.com/shareArticle?mini=true&title={{ title }}&summary={{ description }}&source=Agworld&url=https://agworld-redesign.netlify.app{{ page.url | url }}&utm_medium=share&utm_source=linkedin" target="_blank" class="group flex items-center text-slate-800 no-underline pl-5 pr-7 font-semibold py-4 hover:bg-slate-50">
-        <span class="fa-brands fa-linkedin mr-4 text-2xl"></span>
-        <span class="pr-10">LinkedIn</span>
-        <i class="block ml-auto text-sm fa-solid fa-angle-right fa-beat"></i></a> 
-      </div>
-    </div>
+
+    <div class="share-drop relative z-10 group">
+      <button class="flex h-9 items-center border border-slate-300 bg-white pl-4 pr-5 font-semibold group-hover:border-slate-800 group-hover:bg-slate-800 group-hover:text-slate-100 rounded"><i class="block fa-solid fa-share mr-3 "></i> <span class="block">Share</span></button>
+      
+      <div class="share-dropdown absolute top-0 mt-9 pt-2 hidden group-hover:block z-20">
+        <div class="bg-white border-2 border-slate-800 shadow-lg z-20" style="margin-top: -1px;">
+          <a id="share-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=<%= current_page.data.seo_description %>&via=Agworld&url=https://agworld.com<%= current_page.url %>&utm_medium=share&utm_source=twitter" target="_blank" class="shared group flex items-center no-underline pl-5 pr-7 font-semibold py-3 border-b hover:bg-slate-100">
+            <span class="fab fa-twitter-square mr-4 text-2xl"></span>
+            <span class="pr-10">Twitter</span>
+            <i class="block ml-auto text-sm fa-solid fa-angle-right fa-beat"></i>
+          </a> 
+          <a id="share-facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://agworld.com<%= current_page.url %>&utm_medium=share&utm_source=facebook" target="_blank" class="shared group flex items-center no-underline pl-5 pr-7 font-semibold py-3 border-b hover:bg-slate-100">
+            <span class="fab fa-facebook-square mr-4 text-2xl"></span>
+            <span class="pr-10">Facebook</span>
+            <i class="block ml-auto text-sm fa-solid fa-angle-right fa-beat"></i>
+          </a> 
+          <a id="share-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&title=<%= current_page.url %>&summary=<%= current_page.data.seo_description %>&source=Agworld&url=https://agworld.com<%= current_page.url %>&utm_medium=share&utm_source=linkedin" target="_blank" class="shared group flex items-center no-underline pl-5 pr-7 font-semibold py-3 border-b hover:bg-slate-100">
+            <span class="fab fa-linkedin mr-4 text-2xl"></span>
+            <span class="pr-10">LinkedIn</span>
+            <i class="block ml-auto text-sm fa-solid fa-angle-right fa-beat"></i>
+          </a> 
+          <a id="share-email" target="_blank" href="mailto:?subject=<%= current_page.data.seo_title %>&amp;body=<%= current_page.data.seo_description %> https://agworld.com<%= current_page.url %>" target="_blank" class="shared group flex items-center text-grey-darkest no-underline pl-5 pr-7 font-semibold py-3 hover:bg-slate-100">
+            <span class="fas fa-envelope mr-4 text-2xl"></span>
+            <span class="pr-10">Email</span>
+            <i class="block ml-auto text-sm fa-solid fa-angle-right fa-beat"></i>
+          </a> 
+        </div>
+      </div>   
+      
+      
     </div>
