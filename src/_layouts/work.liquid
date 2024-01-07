@@ -10,7 +10,7 @@
 
       <div class="flex flex-wrap justify-between text-sm">
         <ul class="text-slate-800 tracking-tight flex items-center font-bold mt-7 mr-4">
-          <li><a href="/"><i class="fa-solid fa-house"></i><span class="px-4">/</span></a></li>
+          <li class="whitespace-nowrap"><a href="/"><i class="fa-solid fa-house"></i><span class="px-4">/</span></a></li>
           {% if tags %}
           {% for tag in tags limit:2 %}
           {% if tag == 'work' %}
@@ -37,7 +37,7 @@
           <i class="block fa-solid text-slate-700 fa-square-user mr-4 " style="font-size: 1.72rem;"></i>
           <div class="mr-8 lg:mr-12">
             <h4 class="text-sm text-slate-500">Designer</h4>
-            <span class="font-semibold">{{ authorsData[author].name }}</span>
+            <span class="font-semibold whitespace-nowrap">{{ authorsData[author].name }}</span>
           </div>
         </li>
         {%- endif -%}
