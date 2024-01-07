@@ -27,7 +27,7 @@
       <!-- info boxes -->
       <ul class="flex flex-wrap">
         <li class="flex items-center my-2">
-          <i class="block fa-solid text-slate-700 fa-calendar mr-4 text-2xl"></i>
+          <i class="hidden lg:block fa-solid text-slate-700 fa-calendar mr-4 text-2xl"></i>
           <div class="mr-8 lg:mr-12">
             <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Date</p>
             <span class="text-sm md:text-base font-semibold leading-tight whitespace-nowrap">{{ page.date | date: "%d %b, %Y" }}</span>
@@ -36,7 +36,7 @@
 
         {% if client %}
         <li class="flex items-center my-2">
-          <i class="block fa-solid text-slate-700 fa-buildings mr-4 text-2xl"></i>
+          <i class="hidden lg:block fa-solid text-slate-700 fa-buildings mr-4 text-2xl"></i>
           <div class="mr-8 lg:mr-12">
             <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Client</p>
             <time itemprop="datePublished" class="text-sm md:text-base font-semibold leading-tight">{{ client }}</time>
@@ -46,7 +46,7 @@
 
         {% if tools %}
         <li class="flex items-center my-2">
-          <i class="block fa-solid text-slate-700 fa-hammer-brush mr-4 text-2xl"></i>
+          <i class="hidden lg:block fa-solid text-slate-700 fa-hammer-brush mr-4 text-2xl"></i>
           <div class="mr-5 lg:mr-9">
             <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Tools</p>
             {% for tool in tools %}
@@ -58,7 +58,7 @@
 
         {% if author %}
           <li class="flex items-center my-2">
-            <i class="block fa-solid text-slate-700 fa-square-user mr-4 " style="font-size: 1.72rem;"></i>
+            <i class="hidden lg:block fa-solid text-slate-700 fa-square-user mr-4 " style="font-size: 1.72rem;"></i>
             <div class="mr-8 lg:mr-12">
               <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Designer</p>
               <span class="text-sm md:text-base font-semibold leading-tight whitespace-nowrap">{{ authorsData[author].name }}</span>
