@@ -6,10 +6,9 @@
   <div class="bg-white border-b">
 
     <!-- top header -->
-    <div class="container py-16 z-10">
+    <div class="container pt-6 pb-12 z-10">
 
-      <div class="flex flex-wrap justify-between text-sm">
-        <ul class="text-slate-800 tracking-tight flex items-center font-bold mt-7 mr-4">
+        <ul class="text-slate-800 tracking-tight flex items-center text-sm font-bold mt-7 mr-4">
           <li class="whitespace-nowrap"><a href="/"><i class="fa-solid fa-house"></i><span class="px-4">/</span></a></li>
           {% if tags %}
           {% for tag in tags limit:2 %}
@@ -22,32 +21,25 @@
           {% endif %}
           <li class="text-slate-500 block w-28 hover:w-auto font-normal truncate ...">{{ title }}</li>
         </ul>
-        <div class="flex items-center text-sm mt-7">
-          <i class="block fa-regular text-slate-700 fa-calendar mr-2 text-lg"></i> <time itemprop="datePublished"
-            class="font-semibold">{{ page.date | date: "%d %b, %Y" }}</time>
-        </div>
-      </div>
 
       <h1 itemprop="headline" class="text-slate-800 mt-3 text-6xl md:text-7xl lg:text-8xl leading-none lg:leading-tight">{{ title }}</h1>
 
       <!-- info boxes -->
-      <ul class="flex flex-wrap pt-4">
-        {% if author %}
+      <ul class="flex flex-wrap">
         <li class="flex items-center my-2">
-          <i class="block fa-solid text-slate-700 fa-square-user mr-4 " style="font-size: 1.72rem;"></i>
+          <i class="block fa-solid text-slate-700 fa-calendar mr-4 text-2xl"></i>
           <div class="mr-8 lg:mr-12">
-            <h4 class="text-sm text-slate-500">Designer</h4>
-            <span class="font-semibold whitespace-nowrap">{{ authorsData[author].name }}</span>
+            <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Date</p>
+            <span class="text-sm md:text-base font-semibold leading-tight whitespace-nowrap">{{ page.date | date: "%d %b, %Y" }}</span>
           </div>
         </li>
-        {%- endif -%}
 
         {% if client %}
         <li class="flex items-center my-2">
           <i class="block fa-solid text-slate-700 fa-buildings mr-4 text-2xl"></i>
           <div class="mr-8 lg:mr-12">
-            <h4 class="text-sm text-slate-500">Client</h4>
-            <time itemprop="datePublished" class="font-semibold">{{ client }}</time>
+            <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Client</p>
+            <time itemprop="datePublished" class="text-sm md:text-base font-semibold leading-tight">{{ client }}</time>
           </div>
         </li>
         {%- endif -%}
@@ -56,13 +48,23 @@
         <li class="flex items-center my-2">
           <i class="block fa-solid text-slate-700 fa-hammer-brush mr-4 text-2xl"></i>
           <div class="mr-8 lg:mr-12">
-            <h4 class="text-sm text-slate-500">Tools</h4>
+            <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Tools</p>
             {% for tool in tools %}
-            <span class="font-semibold pr-3">{{ tool }}</span>
+            <span class="text-sm md:text-base font-semibold leading-tight pr-3">{{ tool }}</span>
             {% endfor %}
           </div>
         </li>
         {%- endif -%}
+
+        {% if author %}
+          <li class="flex items-center my-2">
+            <i class="block fa-solid text-slate-700 fa-square-user mr-4 " style="font-size: 1.72rem;"></i>
+            <div class="mr-8 lg:mr-12">
+              <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Designer</p>
+              <span class="text-sm md:text-base font-semibold leading-tight whitespace-nowrap">{{ authorsData[author].name }}</span>
+            </div>
+          </li>
+          {%- endif -%}
 
       </ul>
     </div>
