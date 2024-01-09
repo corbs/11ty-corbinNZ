@@ -3,7 +3,7 @@
 
 
 <main itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="bg-white border-b">
+  <div class="bg-white border-y">
 
     <!-- top header -->
     <div class="container pt-6 pb-12 z-10">
@@ -25,8 +25,9 @@
       <h1 itemprop="headline" class="text-slate-800 mt-3 text-6xl md:text-7xl lg:text-8xl leading-none lg:leading-tight">{{ title }}</h1>
 
       <!-- info boxes -->
-      <ul class="flex flex-wrap">
-        <li class="flex items-start my-2">
+      <div class="overflow-x">
+      <ul class="w-full flex items-start">
+        <li class="flex items-center my-2">
           <i class="hidden lg:block fa-solid text-slate-700 fa-calendar mr-4 text-2xl"></i>
           <div class="mr-8 lg:mr-12">
             <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Date</p>
@@ -35,7 +36,7 @@
         </li>
 
         {% if client %}
-        <li class="flex items-start my-2">
+        <li class="flex items-center my-2">
           <i class="hidden lg:block fa-solid text-slate-700 fa-buildings mr-4 text-2xl"></i>
           <div class="mr-8 lg:mr-12">
             <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Client</p>
@@ -49,7 +50,7 @@
         {%- endif -%}
 
         {% if tools %}
-        <li class="flex items-start my-2">
+        <li class="flex items-center my-2">
           <i class="hidden lg:block fa-solid text-slate-700 fa-hammer-brush mr-4 text-2xl"></i>
           <div class="mr-5 lg:mr-9">
             <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Tools</p>
@@ -61,16 +62,22 @@
         {%- endif -%}
 
         {% if author %}
-          <li class="flex items-start my-2">
+          <li class="flex items-center my-2">
             <i class="hidden lg:block fa-solid text-slate-700 fa-square-user mr-4 " style="font-size: 1.72rem;"></i>
             <div class="mr-8 lg:mr-12">
               <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Designer</p>
-              <span class="text-sm md:text-base font-semibold leading-tight whitespace-nowrap">{{ authorsData[author].name }}</span>
+              {% include 'partial/tooltip',
+              class: 'text-sm md:text-base font-semibold leading-tight whitespace-nowrap',
+              text: authorsData[author].name,
+              url: '/about',
+              tooltip: 'About' %}
             </div>
           </li>
           {%- endif -%}
 
       </ul>
+      </div>
+
     </div>
   </div>
 
