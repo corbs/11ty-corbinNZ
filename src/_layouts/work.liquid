@@ -25,7 +25,7 @@
       <h1 itemprop="headline" class="text-slate-800 mt-3 text-6xl md:text-7xl lg:text-8xl leading-none lg:leading-tight">{{ title }}</h1>
 
       <!-- info boxes -->
-      <div class="overflow-x">
+      <div class="overflow-x-hidden ">
       <ul class="w-full flex items-start">
         <li class="flex items-center my-2">
           <i class="hidden lg:block fa-solid text-slate-700 fa-calendar mr-4 text-2xl"></i>
@@ -52,7 +52,7 @@
         {% if tools %}
         <li class="flex items-center my-2">
           <i class="hidden lg:block fa-solid text-slate-700 fa-hammer-brush mr-4 text-2xl"></i>
-          <div class="mr-5 lg:mr-9">
+          <div class="mr-5 lg:mr-9 whitespace-nowrap">
             <p class="font-semibold text-xs pb-0 md:text-sm text-slate-500">Tools</p>
             {% for tool in tools %}
             <span class="text-sm md:text-base font-semibold leading-tight pr-3">{{ tool }}</span>
