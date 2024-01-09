@@ -75,6 +75,10 @@ h1.work::-moz-selection {
   .menu a:hover {
     @apply border-slate-900  ;
     }
+
+  .img {
+    @apply border-2 border-white rounded-md shadow-xl ring-1 ring-black ring-opacity-5;
+  }
 }
 
 .arrow-down-dark {
