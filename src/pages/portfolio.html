@@ -1,0 +1,162 @@
+---
+title: Corbin Featherstone | My Work
+---
+
+<section class="bg-white py-12 border-y">
+    <div class="container text-center">
+        <h2 class="font-bold text-4xl lg:text-5xl">
+          Portfolio
+        </h2>
+        <p class="text-slate-500 max-w-3xl mx-auto pb-6">
+          The projects below represent a small section of my full portfolio. Each item has been designed and built solely by myself. Copyrights belongs to the company the work was created for, used with permission.
+        </p>
+    </div>
+</section>
+
+{% assign new-list = collections.portfolio | reverse %}
+
+<section class="container flex -mt-6">
+    <div class="lg:w-3/4">
+        <!-- if array = [1,2,3,4,5,6] -->
+        {% for item in new-list limit: 1 %}
+        <a href="{{ item.url }}" class="group block lg:mr-12">
+            <div class="relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block bg-slate-900 opacity-20 z-20">
+                </div>
+                {% include 'partial/img',
+                path: item.data.image,
+                2xl: '&w=1070&h=528&fit=crop',
+                xl: '&w=420&h=400&fit=crop',
+                lg: '&w=500&h=420&fit=crop',
+                md: '&w=400&h=300&fit=crop',
+                sm: '&w=380&h=280&fit=crop',
+                class: 'transition duration-500 ease-in-out group-hover:scale-105'
+                %}
+            </div>
+            <time itemprop="datePublished" class="font-semibold mt-3 mb-2 block">{{ item.date | date: "%d %b, %Y" }}</time>
+            <p class="h3 font-bold text-4xl lg:text-5xl group-hover:underline">{{ item.data.title }}</p>
+            <p class="text-lg pb-4">{{ item.data.description }}</p>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="lg:w-1/4">
+        <!-- if array = [1,2,3,4,5,6] -->
+        {% for item in new-list limit: 2 offset: continue %}
+        <a href="{{ item.url }}" class="group">
+            <div class="relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block bg-slate-900 opacity-20 z-20">
+                </div>
+                {% include 'partial/img',
+                path: item.data.image,
+                2xl: '&w=360&h=180&fit=crop',
+                xl: '&w=420&h=400&fit=crop',
+                lg: '&w=500&h=420&fit=crop',
+                md: '&w=400&h=300&fit=crop',
+                sm: '&w=380&h=280&fit=crop',
+                class: 'transition duration-500 ease-in-out group-hover:scale-105'
+                %}
+            </div>
+            <time itemprop="datePublished" class="font-semibold text-sm block mt-2 mb-1">{{ item.date | date: "%d %b, %Y" }}</time>
+            <p class="pt-1 text-3xl h3 group-hover:underline">{{ item.data.title }}</p>
+            <p class="pb-4">{{ item.data.description }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="container my-16">
+        <ul class="grid lg:grid-cols-3 gap-14">
+            {% for item in new-list limit: 3 offset: continue %}
+            <li class="block border-y py-8 border-slate-400">
+                <a href="{{ item.url }}" class="group">
+                    <time itemprop="datePublished" class="font-semibold text-sm block mb-2">{{ item.date | date: "%d %b, %Y" }}</time>
+                    <p class="font-semibold text-xl group-hover:underline">{{ item.data.title }}</p>
+                    <p>{{ item.data.description }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+</section>
+
+
+<section class="container">
+<!-- Email capture -->
+{% include 'partial/email' %}
+</section>
+
+<section class="container">
+    <div class="grid lg:grid-cols-3 gap-14 my-16">
+    {% for item in new-list limit: 6 offset: continue %}
+    <a href="{{ item.url }}" class="group">
+        <div class="relative overflow-hidden">
+            <div
+                class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block bg-slate-900 opacity-20 z-20">
+            </div>
+            {% include 'partial/img',
+            path: item.data.image,
+            2xl: '&w=420&h=255&fit=crop',
+            xl: '&w=420&h=400&fit=crop',
+            lg: '&w=500&h=420&fit=crop',
+            md: '&w=400&h=300&fit=crop',
+            sm: '&w=380&h=280&fit=crop',
+            class: 'transition duration-500 ease-in-out group-hover:scale-105'
+            %}
+        </div>
+        <time itemprop="datePublished" class="font-semibold text-sm block mt-2 mb-1">{{ item.date | date: "%d %b, %Y" }}</time>
+        <p class="text-2xl h3 group-hover:underline">{{ item.data.title }}</p>
+        <p class="">{{ item.data.description }}</p>
+    </a>
+    {% endfor %}
+    </div>
+</section>
+
+<section class="container my-20">
+    <div class="grid lg:grid-cols-2 gap-14 my-12 py-12 border-y border-slate-400">
+    {% for item in new-list limit: 4 offset: continue %}
+    <a href="{{ item.url }}" class="group flex items-center">
+        <div class="w-1/4 pr-10">
+            {% include 'partial/img',
+            path: item.data.image,
+            2xl: '&w=150&h=150&fit=crop',
+            xl: '&w=420&h=400&fit=crop',
+            lg: '&w=500&h=420&fit=crop',
+            md: '&w=400&h=300&fit=crop',
+            sm: '&w=380&h=280&fit=crop',
+            class: 'shrink-0'
+            %}
+            </div>
+        <div class="w-3/4">
+        <time itemprop="datePublished" class="font-semibold text-sm block mt-2 mb-1">{{ item.date | date: "%d %b, %Y" }}</time>
+        <p class="text-2xl h3 group-hover:underline">{{ item.data.title }}</p>
+        <p class="">{{ item.data.description }}</p>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+</section>
+
+
+<section class="container">
+    <div class="grid lg:grid-cols-4 gap-x-14 gap-y-8  ">
+    {% for item in new-list offset: continue %}
+    <a href="{{ item.url }}" class="group">
+
+            {% include 'partial/img',
+            path: item.data.image,
+            2xl: '&w=550&h=250&fit=crop',
+            xl: '&w=420&h=400&fit=crop',
+            lg: '&w=500&h=420&fit=crop',
+            md: '&w=400&h=300&fit=crop',
+            sm: '&w=380&h=280&fit=crop',
+            class: 'shrink-0'
+            %}
+
+        <time itemprop="datePublished" class="font-semibold text-sm block mt-2 mb-1">{{ item.date | date: "%d %b, %Y" }}</time>
+        <p class="group-hover:underline">{{ item.data.title }}</p>
+
+    </a>
+    {% endfor %}
+</div>
+</section>

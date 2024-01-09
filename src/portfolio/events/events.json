@@ -1,0 +1,4 @@
+{
+    "tags": "events",
+    "permalink": "/portfolio/events/{{page.fileSlug}}/"
+}
