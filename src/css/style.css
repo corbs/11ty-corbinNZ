@@ -34,12 +34,12 @@ h1.work::-moz-selection {
     @apply pb-2;
   }
   p a {
-    @apply font-bold;
+    @apply underline underline-offset-4 decoration-primary-dark hover:text-primary-dark;
     }
   
   p a:hover {
     text-decoration: underline;
-    text-underline-offset: 8px;
+    text-underline-offset: 4px;
   }
   
   h1, .h1 {

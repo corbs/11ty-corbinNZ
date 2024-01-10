@@ -1,0 +1,207 @@
+---
+title: Agworld | Blog
+---
+
+<section class="bg-white py-12 border-y">
+    <div class="container max-w-7xl text-center">
+        <h2 class="font-bold text-4xl lg:text-5xl">
+          Blog
+        </h2>
+        <p class="text-slate-500 max-w-3xl mx-auto pb-6">Dig in to the head of Corbs</p>
+    </div>
+</section>
+
+{% assign new-list = collections.blog | reverse %}
+
+<section class="container max-w-7xl -mt-8">
+        <!-- if array = [1,2,3,4,5,6] -->
+        {% for item in new-list limit: 1 %}
+        <a href="{{ item.url }}" class="group block shadow-xl">
+            <div class="relative overflow-hidden flex flex-col lg:flex-row-reverse items-stretch">
+                <div class="bg-white lg:w-1/3 px-10 py-12">
+                    <time itemprop="datePublished" class="font-semibold">{{ item.date | date: "%d %b, %Y" }}</time>
+                    <p class="text-4xl lg:text-5xl group-hover:underline font-serif">{{ item.data.title }}</p>
+                    <p class="pt-4">{{ item.data.description }}</p>
+
+                      {% if item.data.author %}
+                        <span class="font-semibold"> {{ authorsData[item.data.author].name }} </span>
+                      {%- endif -%}
+                
+                      <h4 class="text-sm text-slate-500">Category</h4>
+                      <span itemprop="keywords" class="font-semibold">{% if category %}{{ category }}{% else %}Agworld Blog{% endif %}</span>
+
+
+                </div>
+                {% include 'partial/img',
+                path: item.data.image,
+                2xl: '&w=980&h=548&fit=crop',
+                xl: '&w=420&h=400&fit=crop',
+                lg: '&w=500&h=420&fit=crop',
+                md: '&w=400&h=300&fit=crop',
+                sm: '&w=380&h=280&fit=crop',
+                class: ''
+                %}
+            </div>
+        </a>
+        {% endfor %}
+</section>
+
+
+<!-- Featured articles -->
+<section class="container max-w-7xl">
+  <p class="text-xl font-bold pb-8">Featured</p>
+  <div class="grid lg:grid-cols-2 gap-16">
+    {% for item in new-list limit: 2 offset: continue %}
+      <a href="{{ item.url }}" class="group bg-white relative shadow-lg">
+        {% include 'partial/img',
+        path: item.data.image,
+        2xl: '&w=650&h=280&fit=crop',
+        xl: '&w=420&h=400&fit=crop',
+        lg: '&w=500&h=420&fit=crop',
+        md: '&w=400&h=300&fit=crop',
+        sm: '&w=380&h=280&fit=crop',
+        class: ''
+        %}
+        <div class="px-8 py-4">
+          <time itemprop="datePublished" class="font-semibold">{{ item.date | date: "%d %b, %Y" }}</time>
+          <p class="pt-2 text-2xl font-serif group-hover:underline">{{ item.data.title }}</p>
+          <p class="">{{ item.data.description }}</p>
+
+          {% if item.data.author %}
+          <span class="font-medium text-sm pb-5 text-slate-500"><i class="fa-regular fa-square-user pr-2"></i> {{ authorsData[item.data.author].name }} </span>
+          {%- endif -%}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+
+<section class="container max-w-7xl">
+  <p class="text-xl font-bold pb-8">Recent</p>
+    <div class="grid lg:grid-cols-3 gap-14">
+    {% for item in new-list limit: 6 offset: continue %}
+    <a href="{{ item.url }}" class="group shadow-lg flex flex-col">
+            {% include 'partial/img',
+            path: item.data.image,
+            2xl: '&w=420&h=160&fit=crop',
+            xl: '&w=420&h=400&fit=crop',
+            lg: '&w=500&h=420&fit=crop',
+            md: '&w=400&h=300&fit=crop',
+            sm: '&w=380&h=280&fit=crop',
+            class: ''
+            %}
+        <div class="px-6 pt-6 bg-white flex flex-col flex-1">
+          <div class="flex-1 pb-5">
+          <time itemprop="datePublished" class="font-semibold">{{ item.date | date: "%d %b, %Y" }}</time>
+          <p class="pt-2 text-2xl font-serif group-hover:underline">{{ item.data.title }}</p>
+          <p class="">{{ item.data.description }}</p>
+          </div>
+          {% if item.data.author %}
+          <span class="font-medium text-sm pb-5 text-slate-500"><i class="fa-regular fa-square-user pr-2"></i> {{ authorsData[item.data.author].name }} </span>
+          {%- endif -%}
+        </div>
+    </a>
+    {% endfor %}
+    </div>
+</section>
+
+<section class="container max-w-7xl">
+  <div class="grid lg:grid-cols-4 gap-14 my-12 py-12 border-t border-slate-400">
+  {% for item in new-list limit: 12 offset: continue %}
+  <a href="{{ item.url }}" class="group">
+
+          {% include 'partial/img',
+          path: item.data.image,
+          2xl: '&w=290&h=150&fit=crop',
+          xl: '&w=420&h=400&fit=crop',
+          lg: '&w=500&h=420&fit=crop',
+          md: '&w=400&h=300&fit=crop',
+          sm: '&w=380&h=280&fit=crop',
+          class: 'shrink-0'
+          %}
+      <p class="pt-2 text-xl font-serif group-hover:underline">{{ item.data.title }}</p>
+      <p class="">{{ item.data.description }}</p>
+
+  </a>
+  {% endfor %}
+</div>
+</section>
+
+
+<section class="container max-w-7xl">
+  <div class="p-20 border rounded-md bg-white">
+    <h2 class="font-serif text-center">This is a block of content that links to other stuff</h2>
+  </div>
+</section>
+
+<section class="container max-w-7xl">
+  <div class="grid lg:grid-cols-5 gap-x-14 gap-y-8  ">
+  {% for item in new-list limit: 40 offset: continue %}
+  <a href="{{ item.url }}" class="group">
+
+          {% include 'partial/img',
+          path: item.data.image,
+          2xl: '&w=550&h=250&fit=crop',
+          xl: '&w=420&h=400&fit=crop',
+          lg: '&w=500&h=420&fit=crop',
+          md: '&w=400&h=300&fit=crop',
+          sm: '&w=380&h=280&fit=crop',
+          class: 'shrink-0'
+          %}
+      <p class="pt-2 font-serif group-hover:underline">{{ item.data.title }}</p>
+
+  </a>
+  {% endfor %}
+</div>
+</section>
+
+<section class="container max-w-7xl">
+  <div class="p-20 border rounded-md bg-white">
+    <h2 class="font-serif text-center">This is a block of content that links to other stuff</h2>
+  </div>
+</section>
+
+
+<section class="container max-w-7xl">
+    <div class="grid lg:grid-cols-3 gap-10 gap-y-8  ">
+    {% for item in new-list limit: 40 offset: continue %}
+    <a href="{{ item.url }}" class="group flex">
+        <div class="lg:w-1/5 mr-6">
+          {% include 'partial/img',
+          path: item.data.image,
+          2xl: '&w=200&h=140&fit=crop',
+          xl: '&w=200&h=140&fit=crop',
+          lg: '&w=500&h=420&fit=crop',
+          md: '&w=400&h=300&fit=crop',
+          sm: '&w=380&h=280&fit=crop',
+          class: 'shrink-0'
+          %}
+      </div>
+      <div class="lg:w-4/5">
+        <p class="text-lg font-serif group-hover:underline">{{ item.data.title }}</p>
+      </div>
+
+    </a>
+    {% endfor %}
+</div>
+</section>
+
+<section class="container max-w-7xl">
+  <div class="p-20 border rounded-md bg-white">
+    <h2 class="font-serif text-center">This is a block of content that links to other stuff</h2>
+  </div>
+</section>
+
+<section class="container max-w-7xl">
+  <div class="grid lg:grid-cols-2 gap-x-12 ">
+  {% for item in new-list offset: continue %}
+  <a href="{{ item.url }}" class="group px-4 py-2 border-t border-slate-300">
+
+      <span class="font-serif text-lg group-hover:underline">{{ item.data.title }}</span>
+
+
+  </a>
+  {% endfor %}
+</div>
+</section>
