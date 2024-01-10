@@ -1,4 +1,4 @@
 {
-    "tags": "artportfolio",
+    "tags": "artwork",
     "permalink": "/portfolio/artwork/{{page.fileSlug}}/"
 }

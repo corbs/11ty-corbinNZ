@@ -2,29 +2,34 @@
 {% include 'navigation.liquid' %}
 
 <main itemscope itemtype="https://schema.org/NewsArticle" class="container max-w-7xl py-16">
-      <!-- Details -->
-      <div class="flex justify-between items-center">
-     
-          <ul class="text-slate-800 tracking-tight flex items-center text-sm font-semibold ">
-              <li><a href="/"><i class="fa-solid fa-house"></i></a><span class="px-4">/</span></li>
-              <li><a href="/blog" class="hover:underline">Blog</a><span class="px-4">/</span></li>
-              <li><a href="/resources/whats-new" class="hover:underline">What's new</a><span class="px-4">/</span></li>
-              <li class="text-slate-500 block w-28 hover:w-auto font-normal truncate ...">{{ title }}</li>
-          </ul>
-      </div>
-    
-    <div class="flex flex-col lg:flex-row mt-10">
+
+    <div class="flex flex-col lg:flex-row">
     <section class="lg:pr-12 lg:mr-12 lg:border-r border-slate-400 lg:w-3/4 mt-0">
 
     <article class="prose prose-slate prose-p:text-slate-800 max-w-full pb-3">
-      
+
+    <!-- Breadcrumbs -->
+      <ul class="text-slate-800 tracking-tight flex items-center text-sm font-bold mr-4">
+        <li class="whitespace-nowrap"><a href="/"><i class="fa-solid fa-house"></i><span class="px-4">/</span></a></li>
+        {% if tags %}
+        {% for tag in tags limit:2 %}
+        {% if tag == 'blog' %}
+        <li><a href="/blog/" class="hover:underline">{{ tag }}</a><span class="px-4">/</span></li>
+        {% else %}
+        <li><a href="/blog/{{ tag }}" class="hover:underline">{{ tag }}</a><span class="px-4">/</span></li>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        <li class="text-slate-500 block w-28 hover:w-auto font-normal truncate ...">{{ title }}</li>
+      </ul>
+
       <h1 itemprop="headline" class="text-4xl md:text-5xl lg:text-6xl mb-6 lg:mb-8">{{ title }}</h1>    
 
       <!-- Details -->
       <div class="flex justify-between items-center text-slate-900 font-medium -mb-3">
 
         <!-- Author / date -->
-        <div class="flex flex-wrap items-center text-sm lg:text-base mb-4">
+        <div class="flex flex-wrap items-center text-sm mb-6">
           {% if author %}
               <span class="block font-medium text-slate-900"> {{ authorsData[author].name }} </span>
           <span class="px-2">/</span>
@@ -94,7 +99,7 @@
 
       <a href="*" class="hidden lg:flex w-full items-center justify-center rounded bg-white px-3 py-3 mb-6 text-sm font-medium hover:border-slate-800 border border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2">Start with Agworld <i class="pl-4 fa-solid fa-angle-right fa-beat"></i></a>
       <h4 class="font-serif font-bold text-3xl tracking-tight pb-4">What else is new?</h4>
-      {% assign posts = collections.new | reverse %}
+      {% assign posts = collections.blog | reverse %}
       {% assign i = 0 %}
       {% for items in posts limit: 3 %}
       {% if items.url != page.url %}

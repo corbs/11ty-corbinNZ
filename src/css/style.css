@@ -34,7 +34,7 @@ h1.work::-moz-selection {
     @apply pb-2;
   }
   p a {
-    @apply underline underline-offset-4 decoration-primary-dark hover:text-primary-dark;
+    @apply underline underline-offset-4 decoration-dotted decoration-slate-500 hover:decoration-solid hover:decoration-slate-800;
     }
   
   p a:hover {

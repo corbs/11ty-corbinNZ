@@ -5,7 +5,7 @@ image: test.jpg
 author: Corbs
 ---
 
-Every grower and agronomist will tell you that growing a successful crop is not easy. This is due to many factors outside of their control that ultimately determine the outcome of the season, such as weather and the rise of input costs, that can decide a season but that cannot be influenced. Regardless of this, the same four basic process underpin every growing season:
+Every grower and [agronomist will tell you](/blog) that growing a successful crop is not easy. This is due to many factors outside of their control that ultimately determine the outcome of the season, such as weather and the rise of input costs, that can decide a season but that cannot be influenced. Regardless of this, the same four basic process underpin every growing season:
 
 - Planning
 - In-season decision making
