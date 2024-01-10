@@ -1,0 +1,20 @@
+---
+title: "Ground truthing - the key to accuracy"
+description: "Composite sampling jobs can now be created in Agworld"
+image: test.jpg
+author: Corbs
+---
+
+Accuracy leads to improvements in any process, and is key to achieving better results in every industry; agriculture is no exception here. With this in mind, it's great to see the increase in adoption of many digital tools that aid precision such as precision planting, zone-based soil sampling, the utili<%= I18n.t(:'t.s') %>ation of NDVI imagery, topography maps, electromagnetic conductivity (EM) surveys, and soil texture maps; all of which can help growers and their consultants become more accurate. I've been involved in agriculture all my life and, especially after I've been part of organi<%= I18n.t(:'t.s') %>ations focusing on geospatial data such as mapshots, I've seen firsthand the difference this variety of data layers can make for the results in any field.
+
+It's easy to forget sometimes though that just looking at stand-alone data layers doesn't show the complete picture and can easily lead to the wrong conclusions when taken out of context. This is why in my opinion, it's so important to be able to view data layers right there in the field where the results of a data layer can be verified and ground truthed. Too many service providers only provide growers and their advisors with results on a desktop / laptop or a piece of paper; both of them make it really hard to see exactly where you are in a field relative to the map that you are trying to ground truth.
+
+Most growers and consultants that I speak to want to be able to stand in a field and have access to any data layer available for a field, with the option to quickly switch between layers and overlay results. Naturally, these data layers need to be available offline too for when there is no phone reception available, which is often the case in the beautiful Southern USA where I'm based. When you are standing in the field it becomes a lot easier to interpret the results presented to you in your data layers, and it makes sure that the conclusions you draw make sense with what is actually happening in the field.
+
+When you see a high NDVI index reading for example, this could mean that your crops are doing really well in a certain area, or it could mean that you have a lot of weeds to deal with. Your NDVI image won't tell the complete story, and ground truthing is key to finding out which situation is presenting itself and what the most appropriate response is. The same goes for the soil sampling process; you need to be able to accurately save your soil sampling locations and be able to drive back to them throughout the season or during the next soil sampling process, so you can make sure you compare apples to apples and know exactly what your background fertility is in an area and are able to accurately assign that zone the correct fertility rate on your next prescription map.
+
+Since I've joined Agworld in November last year I've seen first hand the advantages that growers, consultants and other service providers derive from Agworld's mobile application, especially when combined with our partner PCT Agcloud's geospatial data services through a bespoke integration. From soil sampling to yield data, EM surveys and soil maps to planting data and anything in between; PCT Agcloud is the expert in their field, which is why Agworld has partnered with them for over 7 years already.
+
+Using an industry-leading business like PCT Agcloud and then receiving the data layers right where they are most useful, in Agworld's mobile apps, is a game changer. Geospatial data layers are of no use when they just sit on your desktop or in a drawer, but when they're available on our farm information management platform, which growers and consultants use on a daily basis in the field, more accurate decisions are made every day and profitability improves throughout the season.
+
+Interested in learning more? Feel free to contact me on the details below - I look forward to having a chat with you!
