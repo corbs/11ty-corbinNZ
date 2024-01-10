@@ -1,0 +1,169 @@
+{% include 'head.liquid' %}
+{% include 'navigation.liquid' %}
+
+<main itemscope itemtype="https://schema.org/NewsArticle" class="container py-16">
+      <!-- Details -->
+      <div class="flex justify-between items-center">
+     
+          <ul class="text-slate-800 tracking-tight flex items-center text-sm font-semibold ">
+              <li><a href="/"><i class="fa-solid fa-house"></i></a><span class="px-4">/</span></li>
+              <li><a href="/blog" class="hover:underline">Blog</a><span class="px-4">/</span></li>
+              <li><a href="/resources/whats-new" class="hover:underline">What's new</a><span class="px-4">/</span></li>
+              <li class="text-slate-500 block w-28 hover:w-auto font-normal truncate ...">{{ title }}</li>
+          </ul>
+      </div>
+    
+        <!-- Divider -->
+        <div class="relative mb-3 mt-6">
+        <div class="absolute inset-0 flex items-center" aria-hidden="true">
+            <div class="w-full border-t border-slate-400"></div>
+        </div>
+        <div class="relative flex justify-center">
+            <span class="bg-slate-50 px-3 rounded-md border-slate-400 text-sm font-semibold text-lg leading-6 text-slate-700">Connecting the industry</span>
+        </div>
+        </div>
+
+    <div class="flex flex-col lg:flex-row mt-10">
+    <section class="lg:pr-12 lg:mr-12 lg:border-r border-slate-400 lg:w-3/4 mt-0">
+
+    <article class="prose prose-slate prose-p:text-slate-800 max-w-full pb-3">
+      
+      <h1 itemprop="headline" class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight border-slate-400 mb-6 lg:mb-8">{{ title }}</h1>    
+
+      <!-- Details -->
+      <div class="flex justify-between items-center text-slate-900 font-medium -mb-3">
+
+        <!-- Author / date -->
+        <div class="flex flex-wrap items-center text-sm lg:text-base">
+          {% if author %}
+          <div class="flex items-center">
+              <img src="https://agw.imgix.net/{{ authorsData[author].avatar }}?auto=format&w=20&h=20&fit=facearea&facepad=1.5"
+                alt=" Leaf | Data infrastructure for agriculture "
+                class="lazyload shrink-0 rounded-full mr-2 my-0"
+              >
+              <span class="block font-medium text-slate-900"> {{ authorsData[author].name }} </span>
+          </div>
+          <span class="px-2">/</span>
+          {%- endif -%}
+          <time  itemprop="datePublished" content="{{ page.date | date: '%d %b, %Y' }}" class="block">{{ page.date | date: "%d %b, %Y" }}</time>
+        </div>
+
+        {% include 'partial/share', position: 'absolute top-8 right-0', arrow: 'ml-auto mr-10 mt-1' %}
+
+      </div>
+
+      {% include 'partial/img',
+      path: image,
+      imgalt: title,
+      2xl: '&w=950&h=500&fit=crop&bri=-10&sat=-100',
+      xl: '&w=780&h=380&fit=crop&bri=-10&sat=-100',
+      lg: '&w=780&h=350&fit=crop&bri=-10&sat=-100',
+      md: '&w=960&h=300&fit=crop&bri=-10&sat=-100',
+      sm: '&w=780&h=300&fit=crop&bri=-10&sat=-100',
+      class: ''
+      %}
+      <span itemprop="description" class="block py-1 pl-4 border-l-4 border-slate-700 font-serif italic text-lg">{{ description }}</span>
+        <span itemprop="articleBody">
+        {{ content }}
+        </span>
+    </article>
+
+    {% include 'partial/share-line' %}
+
+    <!-- author -->
+    {% if author %}
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person"> 
+      <div class="flex items-center mt-12 ">
+        {% include 'partial/img',
+        path: authorsData[author].avatar,
+        imgalt: authorsData[author].name,
+        class: 'border-4 border-white rounded-md shadow-sm mr-5',
+        2xl: '&w=70&h=70&fit=crop',
+        xl: '&w=70&h=70&fit=crop',
+        lg: '&w=70&h=70&fit=crop',
+        md: '&w=70&h=70&fit=crop',
+        sm: '&w=70&h=70&fit=crop',
+        %}
+        <div>
+        <h4 itemprop="name" class="pt-1 font-bold"> {{ authorsData[author].name }} </h4>
+        <p itemprop="jobTitle" class=""> {{ authorsData[author].position }} </p>
+        </div>
+        </div>
+      <p itemprop="description" class="text-slate-600 pt-5"> {{ authorsData[author].bio }} </p>
+      <p itemprop="email" class="text-slate-600 pt-5"> {{ authorsData[author].email }} </p>
+      <p itemprop="telephone" class="text-slate-600 pt-5"> {{ authorsData[author].phone }} </p>
+      {% if authorsData[author].linkedin %}<a itemprop="url" class="text-slate-600 pt-5" href="https://www.linkedin.com/in/{{ authorsData[author].linkedin }}">Follow me </a>{% endif %}
+    </div>
+    {%- endif -%}
+
+
+    <!-- Follow us -->
+    <div class="my-12">
+      <h4 class="text-center font-bold text-3xl pb-4 font-serif">Follow Agworld</h4>
+    {% include 'partial/socmed',
+      class: 'text-center',
+      linkClass: 'inline-block px-3 py-2 m-1 border-b-4 border-slate-50 hover:border-slate-900'
+    %}
+    </div>
+
+  </section>
+
+
+    <!-- sidebar -->
+    <aside class="lg:w-1/4">
+      <div class="lg:sticky lg:top-8 max-w-2xl mx-auto">
+
+      <a href="*" class="hidden lg:flex w-full items-center justify-center rounded bg-white px-3 py-3 mb-6 text-sm font-medium hover:border-slate-800 border border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2">Start with Agworld <i class="pl-4 fa-solid fa-angle-right fa-beat"></i></a>
+      <h4 class="font-serif font-bold text-3xl tracking-tight pb-4">What else is new?</h4>
+      {% assign posts = collections.new | reverse %}
+      {% assign i = 0 %}
+      {% for items in posts limit: 3 %}
+      {% if items.url != page.url %}
+      {% if i < 2 %}
+        <a class="block group mb-8" href="{{ items.url }}">
+          {% include 'partial/img',
+          path: items.data.image,
+          2xl: '&h=220&w=400&fit=crop&bri=-10&sat=-100',
+          xl: '&h=220&w=300&fit=crop&bri=-10&sat=-100',
+          lg: '&h=280&w=500&fit=crop&bri=-10&sat=-100',
+          md: '&h=250&w=800&fit=crop&bri=-10&sat=-100',
+          sm: '&h=250&w=700&fit=crop&bri=-10&sat=-100',
+          alt: 'Agworld events',
+          class: 'my-3'
+          %}
+        <h4 class="group-hover:underline text-lg font-serif italic leading-snug">{{ items.data.description }}</h4>
+        </a>
+        {% assign i = i | plus: 1 %}
+        {% endif %} 
+        {% endif %}
+      {% endfor %}
+
+        <!-- Email form -->
+
+        <p class="text-center pb-3 font-medium">
+          <span class="fa-solid fa-bell text-3xl pb-3"></span><br />
+          Notify me of new product features</p>
+        <div class="mt-5 lg:mt-0 max-w-lg mx-auto">
+          <form class="flex flex-row lg:flex-col">
+            <label for="email-address" class="sr-only">Email address</label>
+            <input id="email-address" name="email-address" type="email" autocomplete="email" required class="text-sm font-medium w-full rounded border border-slate-400 bg-white px-3 py-2 placeholder-slate-500 shadow-sm focus:border-slate-800 focus:ring-1 focus:ring-slate-800 max-w-full lg:max-w-5xl" placeholder="Enter your email">
+            <div class="lg:mt-3 rounded-md shadow ml-3 lg:ml-0 lg:w-full sm:flex-shrink-0">
+              <button type="submit" class="flex w-full items-center justify-center rounded border border-transparent bg-slate-900 px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2">Notify me</button>
+            </div>
+          </form>
+          <p class="mt-3 text-xs text-slate-600">
+            We care about the protection of your data. Read our
+            <a href="#" class="font-semibold underline">Privacy Policy.</a>
+          </p>
+        </div>
+
+        </div>
+      </aside>
+      
+      </div>
+</main>
+
+{% include 'cta.liquid' %}
+{% include 'footer.liquid' %}
+</body>
+</html>

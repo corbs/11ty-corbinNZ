@@ -1,0 +1,6 @@
+{
+    "layout": "blog",
+    "permalink": "/blog/{{page.fileSlug}}/",
+    "tags": "blog",
+    "lang": "en"
+}
