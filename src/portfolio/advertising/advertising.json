@@ -1,4 +1,5 @@
 {
     "tags": "advertising",
+    "category": "advertising",
     "permalink": "/portfolio/advertising/{{page.fileSlug}}/"
 }

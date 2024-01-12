@@ -1,4 +1,5 @@
 {
     "tags": "website",
+    "category": "website",
     "permalink": "/portfolio/website/{{page.fileSlug}}/"
 }

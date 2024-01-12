@@ -1,4 +1,5 @@
 {
     "tags": "packaging",
+    "category": "packaging",
     "permalink": "/portfolio/packaging/{{page.fileSlug}}/"
 }
