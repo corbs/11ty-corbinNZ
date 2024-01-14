@@ -43,7 +43,7 @@ title: Corbin NZ
     <!-- socmed links -->
     <span class="absolute bottom-2 mb-[2px] left-6 z-20">
       {% include 'partial/socmed',
-      class: '',
+      class: '-mx-2',
       linkClass: 'hover:border-b-4 border-current mx-2'
       %}
     </span>
@@ -53,7 +53,7 @@ title: Corbin NZ
 
 
 <!-- Intro -->
-<section class="container pt-16 pb-12">
+<section class="container pt-12 pb-3">
   <div class="w-full text-center">
     <h5>Corbin Featherstone</h5>
     <h2 class="font-bold text-4xl lg:text-5xl">
@@ -65,14 +65,14 @@ title: Corbin NZ
     {% include 'partial/btn',
     url: '/about',
     text: 'About',
-    class: 'my-5 border border-primary-dark bg-primary hover:bg-primary-light',
+    class: 'my-5 border z-20 border-primary-dark bg-primary hover:bg-primary-light',
     icopost: 'angle-right'
     %}
   </div>
 </section>
 
 <!-- Featured -->
-<div class="relative overflow-hidden bg-white pb-32 pt-10 border-y">
+<div class="relative overflow-hidden bg-white pb-32 pt-12 border-y">
   <div class="relative">
     <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
       <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:py-16">
@@ -166,14 +166,21 @@ title: Corbin NZ
 <!-- Recent -->
 <section class="container py-12">
   <h2 class="text-center pb-12">Recent work</h2>
-  <ul class="w-full grid grid-cols-2 xl:grid-cols-4 gap-x-12">
+  <div class="w-full grid grid-cols-2 xl:grid-cols-4 gap-x-12">
     {% for work in collections.recent limit:4 %}
 
-    <li class="relative group overflow-hidden rounded-md border-2 border-white shadow-sm">
+    <div>
+    {% if work.data.category %}
+    <div class="bg-white border-t-2 border-l-2 border-r-4 border-b-4 font-semibold px-3 py-2 border-slate-700">{{ work.data.category }}</div>
+    {% endif %}
+
+    <div class="relative group overflow-hidden rounded-md border-2 border-white shadow-sm">
+
       <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block bg-slate-900 opacity-40 z-20"></div>
       <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex items-center z-30">
         <div class="mx-auto text-center text-white">
           <p class="font-bold text-2xl text-shadow">{{ work.data.title }}</p>
+          <p>{{ work.data.category }}</p>
           <p class="px-5 py-2 text-shadow">{{ work.data.description }}</p>
           {% include 'partial/btn',
           url: work.url,
@@ -191,9 +198,10 @@ title: Corbin NZ
       sm: '&w=380&h=280&fit=crop',
       class: 'transition duration-500 ease-in-out group-hover:scale-105'
       %}
-    </li>
+    </div>
+  </div>
     {% endfor %}
-  </ul>
+  </div>
 </section>
 
 <!-- Quote -->
@@ -686,7 +694,7 @@ title: Corbin NZ
     %}
     <h2>Events</h2>
     <p class="">
-      Stylised eye as seen reflected in a telescope. Image created using the planets of the solar system. Each planet is
+      Stylised asdf eye as seen reflected in a telescope. Image created using the planets of the solar system. Each planet is
       correctly proportional in size.
     </p>
 
@@ -698,8 +706,7 @@ title: Corbin NZ
     %}
   </div>
   <div class="w-full lg:w-1/2 my-3 group relative overflow-hidden rounded-lg">
-
-    {% for work in collections.events limit:1 %}
+    {% for work in collections.event limit:1 %}
     <div class="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:flex bg-slate-900 opacity-20 z-20"></div>
     <div class="absolute w-full h-full hidden group-hover:flex items-center">
       <div class="mx-auto text-center text-white z-30">
@@ -708,7 +715,13 @@ title: Corbin NZ
         {% include 'partial/btn',
         url: work.url,
         text: 'View project',
-        class: 'my-3 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
+        class: 'm-2 py-2 cursor-pointer text-slate-900 border border-primary-dark bg-primary hover:bg-primary-light'
+        %}
+        {% include 'partial/btn',
+        url: work.url,
+        text: 'Website',
+        icopost: 'arrow-up-right',
+        class: 'm-2 py-2 cursor-pointer text-slate-200 border border-black bg-slate-900 hover:bg-slate-800'
         %}
       </div>
     </div>
@@ -717,9 +730,9 @@ title: Corbin NZ
     2xl: '&w=1000&h=650&fit=crop',
     xl: '&w=850&h=500&fit=crop',
     lg: '&w=700&h=600&fit=crop',
-    md: '&w=800&h=400&fit=crop',
-    sm: '&w=750&h=350&fit=crop',
-    class: 'transition duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75'
+    md: '&w=980&h=500&fit=crop',
+    sm: '&w=800&h=450&fit=crop',
+    class: 'transition duration-500 ease-in-out group-hover:scale-105'
     %}
     {% endfor %}
   </div>
