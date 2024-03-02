@@ -13,7 +13,7 @@ title: Agworld | Blog
 
 {% assign new-list = collections.blog | reverse %}
 
-<section class="container max-w-7xl -mt-8">
+<section class="container max-w-7xl -mt-8 mb-8">
         <!-- if array = [1,2,3,4,5,6] -->
         {% for item in new-list limit: 1 %}
         <a href="{{ item.url }}" class="group block shadow-xl">
@@ -27,8 +27,8 @@ title: Agworld | Blog
                         <span class="font-semibold"> {{ authorsData[item.data.author].name }} </span>
                       {%- endif -%}
                 
-                      <h4 class="text-sm text-slate-500">Category</h4>
-                      <span itemprop="keywords" class="font-semibold">{% if category %}{{ category }}{% else %}Agworld Blog{% endif %}</span>
+                      <h4 class="text-sm text-slate-500 mt-3 mb-1">Category</h4>
+                      <span itemprop="keywords" class="font-medium block -mx-1">{% for category in item.data.tags %}<span class="inline-block py-1 px-2 rounded m-1 border rounded text-sm">{{ category }}</span>{% endfor %}</span>
 
 
                 </div>
@@ -48,8 +48,7 @@ title: Agworld | Blog
 
 
 <!-- Featured articles -->
-<section class="container max-w-7xl">
-  <p class="text-xl font-bold pb-8">Featured</p>
+<section class="container max-w-7xl my-16">
   <div class="grid lg:grid-cols-2 gap-16">
     {% for item in new-list limit: 2 offset: continue %}
       <a href="{{ item.url }}" class="group bg-white relative shadow-lg">
@@ -78,7 +77,6 @@ title: Agworld | Blog
 
 
 <section class="container max-w-7xl">
-  <p class="text-xl font-bold pb-8">Recent</p>
     <div class="grid lg:grid-cols-3 gap-14">
     {% for item in new-list limit: 6 offset: continue %}
     <a href="{{ item.url }}" class="group shadow-lg flex flex-col">
@@ -126,71 +124,6 @@ title: Agworld | Blog
   </a>
   {% endfor %}
 </div>
-</section>
-
-
-<section class="container max-w-7xl">
-  <div class="p-20 border rounded-md bg-white">
-    <h2 class="font-serif text-center">This is a block of content that links to other stuff</h2>
-  </div>
-</section>
-
-<section class="container max-w-7xl">
-  <div class="grid lg:grid-cols-5 gap-x-14 gap-y-8  ">
-  {% for item in new-list limit: 40 offset: continue %}
-  <a href="{{ item.url }}" class="group">
-
-          {% include 'partial/img',
-          path: item.data.image,
-          2xl: '&w=550&h=250&fit=crop',
-          xl: '&w=420&h=400&fit=crop',
-          lg: '&w=500&h=420&fit=crop',
-          md: '&w=400&h=300&fit=crop',
-          sm: '&w=380&h=280&fit=crop',
-          class: 'shrink-0'
-          %}
-      <p class="pt-2 font-serif group-hover:underline">{{ item.data.title }}</p>
-
-  </a>
-  {% endfor %}
-</div>
-</section>
-
-<section class="container max-w-7xl">
-  <div class="p-20 border rounded-md bg-white">
-    <h2 class="font-serif text-center">This is a block of content that links to other stuff</h2>
-  </div>
-</section>
-
-
-<section class="container max-w-7xl">
-    <div class="grid lg:grid-cols-3 gap-10 gap-y-8  ">
-    {% for item in new-list limit: 40 offset: continue %}
-    <a href="{{ item.url }}" class="group flex">
-        <div class="lg:w-1/5 mr-6">
-          {% include 'partial/img',
-          path: item.data.image,
-          2xl: '&w=200&h=140&fit=crop',
-          xl: '&w=200&h=140&fit=crop',
-          lg: '&w=500&h=420&fit=crop',
-          md: '&w=400&h=300&fit=crop',
-          sm: '&w=380&h=280&fit=crop',
-          class: 'shrink-0'
-          %}
-      </div>
-      <div class="lg:w-4/5">
-        <p class="text-lg font-serif group-hover:underline">{{ item.data.title }}</p>
-      </div>
-
-    </a>
-    {% endfor %}
-</div>
-</section>
-
-<section class="container max-w-7xl">
-  <div class="p-20 border rounded-md bg-white">
-    <h2 class="font-serif text-center">This is a block of content that links to other stuff</h2>
-  </div>
 </section>
 
 <section class="container max-w-7xl">
