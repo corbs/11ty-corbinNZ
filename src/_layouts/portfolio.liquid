@@ -8,6 +8,7 @@
     <!-- top header -->
     <div class="container pt-3 md:pt-6 pb-12 z-10">
 
+      <!-- Breadcrumbs -->
         <ul class="text-slate-800 tracking-tight flex items-center text-sm font-bold mt-7 mr-4">
           <li class="whitespace-nowrap"><a href="/"><i class="fa-solid fa-house"></i><span class="px-4">/</span></a></li>
           {% if tags %}
@@ -224,17 +225,17 @@
 
         <div class="mt-6 max-w-lg mx-auto">
           <p class="pb-3 text-center font-medium mt-6">
-            <span class="fa-solid fa-bell text-3xl text-brand pb-3"></span><br />
+            <span class="fa-solid fa-bell text-3xl text-primary pb-3"></span><br />
             Stay up to date with industry news
           </p>
           <form class="flex flex-row lg:flex-col">
             <label for="email-address" class="sr-only">Email address</label>
             <input id="email-address" name="email-address" type="email" autocomplete="email" required
-              class="text-sm font-medium w-full rounded border border-slate-400 bg-white px-3 py-2 placeholder-slate-500 shadow-sm focus:border-brand-hover focus:ring-1 focus:ring-brand-hover max-w-full lg:max-w-5xl"
+              class="text-sm font-medium w-full rounded border border-slate-400 bg-white px-3 py-2 placeholder-slate-500 shadow-sm focus:border-primary-hover focus:ring-1 focus:ring-primary-hover max-w-full lg:max-w-5xl"
               placeholder="Enter your email">
             <div class="lg:mt-3 rounded-md shadow ml-3 lg:ml-0 lg:w-full sm:flex-shrink-0">
               <button type="submit"
-                class="flex w-full items-center justify-center rounded bg-brand px-3 py-2 text-sm font-medium text-white hover:bg-brand-hover border border-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-hover focus:ring-offset-2">Stay
+                class="flex w-full items-center justify-center rounded bg-slate-800 px-3 py-2 text-sm font-medium text-white hover:bg-slate-700 border border-black focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">Stay
                 up to date</button>
             </div>
           </form>
