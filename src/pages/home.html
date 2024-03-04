@@ -59,7 +59,7 @@ title: Corbin NZ
     <h2 class="font-bold text-4xl lg:text-5xl">
       Communicate. Information. Visually.
     </h2>
-    <p class="text-xl text-slate-500">
+    <p class="text-lg text-slate-600">
       I'm a graphic designer with a long history of churning out high-quality visuals that solve problems.
     </p>
     {% include 'partial/btn',
@@ -94,7 +94,7 @@ title: Corbin NZ
             lg: '&w=500&h=420&fit=crop',
             md: '&w=400&h=300&fit=crop',
             sm: '&w=380&h=280&fit=crop',
-            class: 'w-full border-2 border-white rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none'
+            class: 'w-full border border-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none'
             %}
         </div>
       </div>
@@ -121,7 +121,7 @@ title: Corbin NZ
             lg: '&w=500&h=420&fit=crop',
             md: '&w=400&h=300&fit=crop',
             sm: '&w=380&h=280&fit=crop',
-            class: 'w-full border-2 border-white rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none'
+            class: 'w-full border border-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none'
             %}
         </div>
       </div>
@@ -221,7 +221,15 @@ title: Corbin NZ
             role="tabpanel"
             class=""
         >
-            <img src="https://corbs.imgix.net/{{ image }}?auto=format&w=1160&h=850&fit=crop&wm=webp&lossless=0" alt="placeholder image">
+            {% include 'partial/img',
+            path: image,
+            2xl: '&w=1300&h=750&fit=crop',
+            xl: '&w=550&h=500&fit=crop',
+            lg: '&w=700&h=600&fit=crop',
+            md: '&w=980&h=500&fit=crop',
+            sm: '&w=800&h=450&fit=crop',
+            class: ''
+            %}
         </section>
         {% endfor %}  
     </div>
@@ -236,7 +244,7 @@ title: Corbin NZ
         @keydown.end.prevent.stop="$focus.last()"
         @keydown.page-down.prevent.stop="$focus.last()"
         role="tablist"
-        class="-mb-px flex items-stretch"
+        class="-mx-3 my-2 flex items-stretch"
     >
         <!-- Tab -->
         {% for image in work.data.slider %}
@@ -249,71 +257,24 @@ title: Corbin NZ
               type="button"
               :tabindex="isSelected($el.id) ? 0 : -1"
               :aria-selected="isSelected($el.id)"
-              :class="isSelected($el.id) ? 'border-gray-200 bg-white' : 'border-transparent'"
-              class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
+              :class="isSelected($el.id) ? 'border-slate-800' : 'border-transparent '"
+              class="inline-flex border-2 rounded hover:border-slate-300"
               role="tab"
           >
-            <img src="https://corbs.imgix.net/{{ image }}?auto=format&w=260&h=150&fit=crop&wm=webp&lossless=0" alt="placeholder image">
+            
+            {% include 'partial/img',
+            path: image,
+            2xl: '&w=200&h=150&fit=crop',
+            xl: '&w=550&h=500&fit=crop',
+            lg: '&w=700&h=600&fit=crop',
+            md: '&w=980&h=500&fit=crop',
+            sm: '&w=800&h=450&fit=crop',
+            class: 'border-4 rounded-md border-white'
+            %}
           </button>
         </li>
         {% endfor %}  
         </ul>
-</div>
-{% endif %}
-{% endfor %}
-
-
-
-
-
-
-
-
-<!-- Slider 5 -->
-{% for work in collections.recent limit:1 %}
-{% if work.data.slider %}
-
-<!-- Add this to first div to auto scroll: x-init="setInterval(() => { activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1 }, 5000)"   -->
-<div
-  x-data="{ activeSlide: 1, slideCount: 3 }"
-  class="overflow-hidden relative max-w-5xl mx-auto"
-  >
-
-  <!-- Slider -->
-  <div class="whitespace-nowrap transition-transform duration-500 ease-in-out"
-    :style="'transform: translateX(-' + (activeSlide - 1) * 100.5 + '%)'">
-
-    {% for image in work.data.slider %}
-    <div class="inline-block w-full">
-      <img src="https://corbs.imgix.net/{{ image }}?auto=format&w=1060&h=750&fit=crop&wm=webp&lossless=0" alt="placeholder image">
-    </div>
-    {% endfor %}  
-  </div>
-
-  <!-- Prev/Next Arrows -->
-  <div class="absolute inset-0 flex items-center justify-between px-4">
-    <button
-      @click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
-      class="w-16 h-16 flex items-center bg-slate-800 hover:bg-primary text-slate-100 border-8 border-white rounded-full ">
-      <span class="block text-2xl mx-auto fa-solid fa-angle-left"></span>
-    </button>
-    <button
-      @click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
-      class="w-16 h-16 flex items-center bg-slate-800 hover:bg-primary text-slate-100 border-8 border-white rounded-full">
-      <span class="block text-2xl mx-auto fa-solid fa-angle-right"></span>
-    </button>
-  </div>
-
-  <!-- Dots Navigation -->
-  <div class="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 p-4">
-    <template x-for="slideIndex in slideCount" :key="slideIndex">
-      <button
-        @click="activeSlide = slideIndex"
-        class="h-2 w-2 rounded-full"
-        :class="{'bg-orange-500': activeSlide === slideIndex, 'bg-white/50': activeSlide !== slideIndex}">
-      </button>
-    </template>
-  </div>
 </div>
 {% endif %}
 {% endfor %}

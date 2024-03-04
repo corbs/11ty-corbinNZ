@@ -88,3 +88,11 @@ h1.work::-moz-selection {
   border-right: 5px solid transparent;
   border-top: 5px solid #191919;
 }
+
+.arrow-up-dark {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #191919;
+}
