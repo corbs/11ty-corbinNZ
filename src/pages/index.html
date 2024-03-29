@@ -20,6 +20,11 @@ title: Corbin NZ
         class: 'my-2 mr-4 border-2 border-slate-900 bg-slate-900 text-primary hover:text-primary-light
         hover:bg-slate-800 hover:shadow',
         %}
+        {% include 'partial/btn',
+        url: 'https://storage.googleapis.com/corbin.nz/docs/featherstone_corbin_portfolio_2024.pdf',
+        text: 'Design Portfolio',
+        class: 'my-2 mr-4 border-2 border-slate-900 hover:bg-primary-light',
+        %}
       </div>
     </div>
     <div class="hidden lg:flex">
@@ -64,7 +69,7 @@ title: Corbin NZ
 </div>
 
 <!-- Intro -->
-<section class=" bg-white">
+<section class="py-12">
   <div class="container pt-12 pb-8 w-full text-center">
     <h5>Corbin Featherstone</h5>
     <h2 class="font-bold text-4xl lg:text-5xl">
@@ -73,10 +78,15 @@ title: Corbin NZ
     <p class="text-xl text-slate-500">
       I'm a graphic designer with a long history of churning out high-quality visuals that solve problems.
     </p>
+    <div class="max-w-xl mx-auto my-4">
+      {% include 'partial/btn',
+      url: 'https://storage.googleapis.com/corbin.nz/docs/featherstone_corbin_portfolio_2024.pdf',
+      text: 'View my Portfolio',
+      class: 'my-2 mr-4 w-full py-6 border-2 border-primary-dark bg-primary hover:bg-primary-light',
+      %}
+    </div>
   </div>
 </section>
-
-{% include 'partial/cta' %}
 
 
 <script type="application/ld+json" src="/assets/schema_personal.json"></script>
