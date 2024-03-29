@@ -87,10 +87,11 @@
 
 <div class="bg-slate-900">
   <div class="container flex flex-wrap justify-between items-center py-5 text-slate-300">
-    {% include 'partial/socmed',
+    {% comment %} {% include 'partial/socmed',
       class: '-mx-2',
       linkClass: 'hover:border-b-2 border-current'
-      %}
+      %} {% endcomment %}
+    <p class="text-sm py-1"></p>
     <p class="text-sm py-1">&copy; Corbin Featherstone {{ 'now' | date: "%Y" }}</p>
   </div>
 </div>
