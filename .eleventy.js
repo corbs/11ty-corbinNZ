@@ -18,8 +18,8 @@ module.exports = function(eleventyConfig) {
     //  });
 
     
-    // Sea Dragon (Godot web export): copied as is to /sea-dragon/game/ - the page is src/pages/sea-dragon.html
-    eleventyConfig.addPassthroughCopy({ "sea-dragon-game": "sea-dragon/game" });
+    // Sea Dragon (Godot web export): a stand-alone game, copied as is to /sea-dragon/ (no page template)
+    eleventyConfig.addPassthroughCopy({ "sea-dragon-game": "sea-dragon" });
 
     // Input Directory : src Output directory: _site
     return {
