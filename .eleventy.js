@@ -18,6 +18,9 @@ module.exports = function(eleventyConfig) {
     //  });
 
     
+    // Sea Dragon web build: sea-dragon-game/ is served at /sea-dragon/
+    eleventyConfig.addPassthroughCopy({ "sea-dragon-game": "sea-dragon" });
+
     // Input Directory : src Output directory: _site
     return {
       dir: {
